@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 
-import { Navbar, Footer } from "components/Layout";
+import { Navbar, Footer } from "./components/Layout";
 import {
   MiretaTab,
   MathCircleTab,
@@ -9,7 +9,7 @@ import {
   CourseworkTab,
   ResearchTab,
   ActivitiesTab,
-} from "components/Tabs";
+} from "./components/Tabs";
 
 function App() {
   const [activeTab, setActiveTab] = useState("Home");
@@ -21,7 +21,7 @@ function App() {
           <div className="w-full flex flex-col md:flex-row items-center gap-8 text-gray-700 rounded-lg shadow bg-white p-8">
             <div className="flex-shrink-0">
               <img
-                src="portrait.jpg"
+                src="/portrait.jpg"
                 alt="Ibrahim Piri portrait"
                 className="w-[500px] h-[500px] rounded-full object-cover border-4 border-blue-200 shadow"
               />
