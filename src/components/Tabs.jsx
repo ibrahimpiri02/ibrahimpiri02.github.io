@@ -3,11 +3,11 @@ import React from "react";
 export function MiretaTab() {
   return (
     <section className="w-full p-6 bg-white rounded-lg shadow font-classic">
-      <h2 className="text-2xl font-bold mb-4 text-accent">Mireta Urban Design</h2>
+      <h2 className="text-2xl font-bold mb-4 text-accent">Mireta Urban Dynamics</h2>
       <p className="mb-4">
-        Founded in 2023 by myself and Raphael Kay, Mireta Urban Design is dedicated to improving urban environments through innovative software and algorithms. As cofounder and head of software, I have developed multiple algorithms that enhance urban design and promote sustainability.
+        Founded in 2023 by myself and Raphael Kay, Mireta Urban Dynamics is dedicated to improving urban environments through innovative software and algorithms. As cofounder and head of software, I have developed multiple algorithms that enhance urban design and promote sustainability.
       </p>
-      <a href="https://miretaurban.com" target="_blank" rel="noopener noreferrer" className="text-accent underline mb-4 block">Visit Mireta Urban Design Website</a>
+      <a href="https://miretaurban.com" target="_blank" rel="noopener noreferrer" className="text-accent underline mb-4 block">Visit Mireta Urban Dynamics Website</a>
       <div className="mb-4 flex flex-wrap gap-4 justify-center">
         {/* Replace these with actual images of your work */}
         <img src="/images/mireta1.jpg" alt="Mireta Project 1" className="w-40 h-40 object-cover rounded" />
