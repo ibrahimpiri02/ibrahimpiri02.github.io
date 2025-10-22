@@ -29,7 +29,7 @@ function App() {
             <div className="flex-1 text-left">
               <h2 className="text-3xl font-bold mb-2 text-blue-700">About Me</h2>
               <p className="mb-4 text-lg">
-                Hello! I'm Ibrahim Piri, an undergraduate student passionate about mathematics, computer science, and urban design. As cofounder and head of software at Mireta Urban Design, I develop algorithms to improve cities and help the environment. I've been a student and instructor at the Olga Radko Endowed Math Circle for over a decade, where I love inspiring creative problem solving. My competition experience includes leading my Science Bowl team to 2nd place, ranking top 10 globally in Citadel, and being a MIT semifinalist. I enjoy university-level coursework, research in AI and mathematics, and sharing my interests in chess, board games, space launches, and travel. Welcome to my portfolio!
+                Hello! I'm Ibrahim Piri, a high school student passionate about mathematics, computer science, and urban design. As cofounder and head of software at Mireta Urban Design, I develop algorithms to improve cities and help the environment. I've been a student and instructor at the Olga Radko Endowed Math Circle for over a decade, where I love inspiring creative problem solving. My competition experience includes leading my Science Bowl team to 2nd place, ranking top 10 globally in Citadel, and being a MIT semifinalist. I enjoy university-level coursework, research in AI and mathematics, and sharing my interests in chess, board games, space launches, and travel. Welcome to my portfolio!
               </p>
             </div>
           </div>
