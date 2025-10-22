@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <section className="w-full p-6 bg-white rounded-lg shadow font-classic">
+    <section className="w-full p-6 bg-white font-classic">
       <div className="flex flex-col md:flex-row items-center gap-8">
         {/* About Me text on the left */}
         <div className="flex-1 text-left">
@@ -20,7 +20,7 @@ export default function Home() {
           <img
             src="/portrait.jpg"
             alt="Ibrahim Piri portrait"
-            className="w-[300px] h-[400px] object-cover border-4 border-accent/30 shadow rounded-lg"
+            className="w-[300px] h-[400px] object-cover border-4 border-accent/30"
           />
         </div>
       </div>

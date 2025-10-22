@@ -94,7 +94,7 @@ export default function Competitions() {
             key={c.key}
             id={c.key}
             data-competition
-            className="scroll-mt-24 bg-white p-6 rounded-lg shadow"
+            className="scroll-mt-24 bg-white p-6 "
           >
             {c.content}
           </section>

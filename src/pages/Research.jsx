@@ -3,7 +3,7 @@ import React from "react";
 export default function Research() {
   return (
     <div className="w-full flex justify-center">
-      <section className="w-full bg-white rounded-lg shadow p-6 font-classic">
+      <section className="w-full bg-white p-6 font-classic">
         <h2 className="text-2xl font-bold mb-4 text-accent">Research Interests</h2>
         <p className="mb-4">
           My research interests include advanced math topics and the application of AI. I am currently collaborating with a UCLA graduate student to publish a paper on AI applications, and I plan to write about barycentric coordinates.

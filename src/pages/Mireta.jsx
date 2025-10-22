@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Mireta() {
   return (
-    <section className="w-full p-6 bg-white rounded-lg shadow font-classic">
+    <section className="w-full p-6 bg-white font-classic">
       <h2 className="text-2xl font-bold mb-4 text-accent">Mireta Urban Dynamics</h2>
       <p className="mb-4">
         Founded in 2023 by myself and Raphael Kay, Mireta Urban Dynamics is dedicated to improving urban environments through innovative software and algorithms. As cofounder and head of software, I have developed multiple algorithms that enhance urban design and promote sustainability.
