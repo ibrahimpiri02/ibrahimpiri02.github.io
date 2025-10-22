@@ -8,9 +8,9 @@ module.exports = {
     extend: {
       colors: {
         accent: {
-          DEFAULT: '#2563eb', // Tailwind blue-600
-          light: '#3b82f6', // blue-500
-          dark: '#1e40af', // blue-800
+          DEFAULT: '#009a8c', // Tailwind blue-600
+          light: '#009a8c', // blue-500
+          dark: '#008075', // blue-800
         },
       },
       fontFamily: {
