@@ -15,15 +15,17 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-4 z-30 bg-white/90 backdrop-blur-md mx-auto max-w-7xl px-10 py-4 mt-4 rounded-2xl">
-      <div className="flex justify-between items-center font-navbar">
-        {/* Logo on the left */}
+    <nav className="sticky top-0 z-30 w-full bg-white/90 backdrop-blur-md shadow-sm py-4 px-10 mt-0">
+      <div className="flex justify-between items-center font-navbar max-w-7xl mx-auto">
+        {/* Logo on the left (clickable, links to /home) */}
         <div className="flex-shrink-0">
-          <img
-            src="/ibrahimlogo.png"
-            alt="Ibrahim Logo"
-            className="h-16 w-auto"
-          />
+          <Link to="/home">
+            <img
+              src="/ibrahimlogo.png"
+              alt="Ibrahim Logo"
+              className="h-16 w-auto cursor-pointer transition-transform duration-200 hover:scale-105"
+            />
+          </Link>
         </div>
 
         {/* Navbar Links on the right */}

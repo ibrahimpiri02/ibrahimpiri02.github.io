@@ -34,6 +34,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   display: block; /* remove flex centering */
+  background-color: #ffffff;
 }
 
 /* Headings */
@@ -67,7 +68,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Light mode overrides */
+/* Light mode overrides
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -79,7 +80,8 @@ html {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
+
 .font-navbar {
   font-family: 'Inter', sans-serif;
 }
