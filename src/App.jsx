@@ -18,7 +18,7 @@ function App() {
         <Navbar />
       </header>
 
-      <main className="flex-1 flex flex-col items-center justify-center px-4 py-12 pt-28 pb-20 w-full">
+      <main className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 py-12 pt-28 pb-20 w-full max-w-7xl mx-auto">
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />
           <Route path="/home" element={<Home />} />
