@@ -1,9 +1,17 @@
 import React from "react";
+import {ParticleAnimation} from "../components/particle-animation.tsx";
 
 export default function Home() {
   return (
-    <section className="w-full p-6 bg-white font-classic">
-      <div className="flex flex-col md:flex-row items-center gap-8">
+    <section className="w-full bg-white font-classic">
+        <div className="relative flex h-[580px] w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-br">
+
+      <span className="pointer-events-none z-10 whitespace-pre-wrap absolute text-center text-3xl w-[300px] font-semibold leading-none tracking-tighter">
+        Luck plays a role in success, but the harder you work and the more you prepare, the luckier you get. - Jim Simons
+      </span>
+            <ParticleAnimation />
+        </div>
+        <div className="flex flex-col md:flex-row items-center gap-8">
         {/* About Me text on the left */}
         <div className="flex-1 text-left">
           <h2 className="text-2xl font-bold mb-4 text-accent">About Me</h2>
