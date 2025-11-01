@@ -1,5 +1,23 @@
 import React from "react";
 
+const coursework = [
+  { title: "CS 157: Full-Stack Web Application Development", term: "Spring 2026", school: "LAMC", grade: null, status: "planned" },
+  { title: "FINANCE 001: Principles of Finance", term: "Spring 2026", school: "LAMC", grade: null, status: "planned" },
+  { title: "MATH 263: Calculus III (Multivariable)", term: "Spring 2026", school: "LAMC", grade: null, status: "planned" },
+  { title: "CS 131: Discrete Structures", term: "Fall 2025", school: "LACC", grade: "A (In progress)", status: "in-progress" },
+  { title: "CS 216: Object Oriented Programming in C++", term: "Fall 2025", school: "WLAC", grade: "A (In progress)", status: "in-progress" },
+  { title: "ENG GEN 131: Statics", term: "Fall 2025", school: "WLAC", grade: "A", status: "completed" },
+  { title: "MATH 270: Linear Algebra", term: "Summer 2025", school: "LACC", grade: "A", status: "completed" },
+  { title: "MATH 275: Ordinary Differential Equations", term: "Summer 2025", school: "LACC", grade: "A", status: "completed" },
+  { title: "CS 116: Programming in C++", term: "Summer 2025", school: "LACC", grade: "A", status: "completed" },
+  { title: "BUS 032: Business Communications", term: "Spring 2025", school: "WLAC", grade: "A", status: "completed" },
+  { title: "BUS 001: Introduction to Business", term: "Fall 2024", school: "WLAC", grade: "A", status: "completed" },
+  { title: "CS 81: JavaScript Programming", term: "Summer 2024", school: "SMC", grade: "A", status: "completed" },
+  { title: "CS 85: PHP Programming", term: "Summer 2024", school: "SMC", grade: "A", status: "completed" },
+  { title: "MARKET 001: Principles of Selling", term: "Spring 2024", school: "WLAC", grade: "A", status: "completed" },
+  { title: "BUS 005: Business Law I", term: "Fall 2023", school: "WLAC", grade: "A", status: "completed" },
+];
+
 const certificates = [
   {
     title: "Programming in C++: A Hands-on Introduction",
@@ -65,45 +83,98 @@ const certificates = [
 export default function CourseworkAndCertificates() {
   return (
     <section className="p-8 bg-white font-classic">
-      <h2 className="text-3xl font-semibold mb-8 text-accent text-center">
+      <h2 className="text-3xl font-semibold mb-2 text-accent text-center">
         Coursework & Certificates
       </h2>
+      <p className="text-gray-600 text-center mb-10 text-sm">
+        Online courses and specializations outside of traditional school coursework
+      </p>
 
-      <div className="flex flex-col gap-12">
-        {certificates.map((cert, index) => (
-          <div
-            key={index}
-            className="flex flex-col md:flex-row items-center gap-8 bg-white p-6 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
-          >
-            {/* Left Side - Text Info */}
-            <div className="flex-1">
-              <h3 className="text-2xl font-semibold mb-1">{cert.title}</h3>
-              <p className="text-gray-600 italic mb-3">{cert.date}</p>
-              <p className="mb-4">{cert.description}</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700">
-                {cert.details.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Right Side - Image */}
-            <div className="flex-shrink-0 w-full md:w-[320px]">
-              <a
-                href={cert.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block overflow-hidden rounded-lg"
+      {/* Coursework Section */}
+      <div className="mb-12">
+        <h3 className="text-2xl font-semibold mb-6 text-gray-800 text-center">
+          Coursework
+        </h3>
+        <div className="grid md:grid-cols-2 gap-4">
+          {coursework.map((course, index) => (
+            <div
+              key={index}
+              className={`p-4 rounded-lg border ${
+                course.status === "planned"
+                  ? "bg-gray-50 text-gray-500 border-gray-200"
+                  : "bg-white border-gray-200"
+              } hover:shadow-sm transition`}
+            >
+              <h4 className="text-lg font-semibold">{course.title}</h4>
+              <p className="text-sm text-gray-600">
+                {course.school} — {course.term}
+              </p>
+              {course.grade && (
+                <p className="text-sm text-gray-600">
+                  Grade: <span className="font-medium">{course.grade}</span>
+                </p>
+              )}
+              <p
+                className={`text-sm mt-1 ${
+                  course.status === "planned"
+                    ? "text-gray-400"
+                    : course.status === "in-progress"
+                    ? "text-[#009a8c]"
+                    : "text-green-600"
+                }`}
               >
-                <img
-                  src={cert.image}
-                  alt={cert.title}
-                  className="w-full h-auto transform transition-transform duration-300 hover:scale-105"
-                />
-              </a>
+                {course.status === "planned"
+                  ? "📅 Planned"
+                  : course.status === "in-progress"
+                  ? "🕓 In Progress"
+                  : "✅ Completed"}
+              </p>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+      </div>
+
+      {/* Certificates Section */}
+      <div>
+        <h3 className="text-2xl font-semibold mb-6 text-gray-800 text-center">
+          Certificates
+        </h3>
+        <div className="flex flex-col gap-12">
+          {certificates.map((cert, index) => (
+            <div
+              key={index}
+              className="flex flex-col md:flex-row items-center gap-8 bg-white p-6 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+            >
+              {/* Text Info */}
+              <div className="flex-1">
+                <h4 className="text-2xl font-semibold mb-1">{cert.title}</h4>
+                <p className="text-gray-600 italic mb-3">{cert.date}</p>
+                <p className="mb-4">{cert.description}</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-700">
+                  {cert.details.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Certificate Image */}
+              <div className="flex-shrink-0 w-full md:w-[320px]">
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block overflow-hidden rounded-lg"
+                >
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="w-full h-auto transform transition-transform duration-300 hover:scale-105"
+                  />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
