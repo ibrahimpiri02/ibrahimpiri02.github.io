@@ -1,16 +1,13 @@
 import React from "react";
-import {ParticleAnimation} from "../components/particle-animation.tsx";
 
 export default function Home() {
   return (
-    <section className="w-full bg-white font-classic">
-        <div className="relative flex h-[580px] w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-br">
-
-      <span className="pointer-events-none z-10 whitespace-pre-wrap absolute text-center text-3xl w-[300px] font-semibold leading-none tracking-tighter">
-        Luck plays a role in success, but the harder you work and the more you prepare, the luckier you get. - Jim Simons
-      </span>
-            <ParticleAnimation />
-        </div>
+    <section className="w-full p-6 bg-white font-classic flex flex-col items-center">
+      <blockquote className="text-center text-xl md:text-2xl font-medium italic text-gray-600 max-w-3xl mb-10 leading-relaxed">
+        “Luck plays a role in success, but the harder you work and the more you prepare, the luckier you get.”
+        <footer className="mt-2 text-gray-500 text-base">— Jim Simons</footer>
+      </blockquote>
+      
         <div className="flex flex-col md:flex-row items-center gap-8">
         {/* About Me text on the left */}
         <div className="flex-1 text-left">
