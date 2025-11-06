@@ -5,13 +5,13 @@ export function Navbar() {
   const location = useLocation();
 
   const links = [
-    { to: "/home", label: "Home" },
-    { to: "/mireta", label: "Mireta" },
-    { to: "/mathcircle", label: "Math Circle" },
-    { to: "/competitions", label: "Competitions" },
-    { to: "/coursework", label: "Coursework" },
-    { to: "/research", label: "Research" },
-    { to: "/activities", label: "Activities" },
+      { to: "/home", label: "Home" },
+      { to: "/mireta", label: "Mireta" },
+      { to: "/aiml", label: "AI & Machine Learning" },
+      { to: "/mathcircle", label: "Math Circle" },
+      { to: "/competitions", label: "Competitions" },
+      { to: "/coursework", label: "Coursework" },
+      //{ to: "/activities", label: "Activities" },
   ];
 
   return (

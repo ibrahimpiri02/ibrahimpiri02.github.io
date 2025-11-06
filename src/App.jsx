@@ -8,7 +8,7 @@ import Mireta from "./pages/Mireta";
 import MathCircle from "./pages/MathCircle";
 import Competitions from "./pages/Competitions";
 import Coursework from "./pages/Coursework";
-import Research from "./pages/Research";
+import AIML from "./pages/AIML.jsx";
 import Activities from "./pages/Activities";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
           <Route path="/mathcircle" element={<MathCircle />} />
           <Route path="/competitions" element={<Competitions />} />
           <Route path="/coursework" element={<Coursework />} />
-          <Route path="/research" element={<Research />} />
+          <Route path="/aiml" element={<AIML />} />
           <Route path="/activities" element={<Activities />} />
         </Routes>
       </main>
