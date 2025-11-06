@@ -44,11 +44,9 @@ export default function Mireta() {
         <li>Featured among the seven top innovations to impact government at the 2024 <strong>World Governments Summit</strong> in Dubai.</li>
         <li>Invited to private discussions with over five world leaders and their senior delegations, including the Crown Prince of Dubai.</li>
         <li>Selected in 2025 as one of ~35 high-potential ventures by <strong>Harvard University’s Climate Tech Accelerator</strong>.</li>
-        <li>Completed pilot projects with <strong>B+H Architects</strong> (600 employees, ~$80M annual revenue) and <strong>Surbana Jurong Group</strong> (16,000 employees, ~$1.5B annual revenue).</li>
-        <li>Signed a formal partnership with B+H Architects.</li>
+        <li>Completed pilot projects with several large firms.</li>
         <li>Invited to present at major global events such as <strong>Global Rail Abu Dhabi 2025</strong> and the <strong>Urban Tech Summit NYC 2025</strong>.</li>
         <li>Upcoming feature in <strong>MIT Technology Review</strong>.</li>
-        <li>Currently negotiating a large-scale contract (~$500K–$600K) with a government body in Abu Dhabi.</li>
       </ul>
 
       <h3 className="text-lg font-semibold mt-6 mb-2 text-accent-dark">Social & Environmental Impact</h3>
