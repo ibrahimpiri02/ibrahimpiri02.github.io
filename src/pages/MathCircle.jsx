@@ -56,7 +56,7 @@ export default function MathCircle() {
         . Through my involvement with ORMC, I also began conducting research in
         artificial intelligence alongside a UCLA graduate student. More details
         about this project can be found in the{" "}
-        <a href="/research" className="text-accent hover:underline">
+        <a href="/src/pages/AIML" className="text-accent hover:underline">
           Research
         </a>{" "}
         tab.
