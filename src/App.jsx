@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 
+import ScrollToTop from "./ScrollToTop";
 import Home from "./pages/Home";
 import Mireta from "./pages/Mireta";
 import MathCircle from "./pages/MathCircle";
@@ -19,6 +20,7 @@ function App() {
       </header>
 
       <main className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 py-12 pt-28 pb-20 w-full max-w-7xl mx-auto">
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />
           <Route path="/home" element={<Home />} />
