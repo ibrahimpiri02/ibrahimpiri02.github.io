@@ -68,6 +68,69 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Style inactive dots */
+.carousel .control-dots .dot {
+    background: #ccc !important;      /* light gray for inactive */
+    box-shadow: none !important;      /* removes default inset shadow */
+    opacity: 1 !important;            /* ensure full visibility */
+    transition: background 0.3s ease;
+}
+
+/* Style the active (current) dot */
+.carousel .control-dots .dot.selected {
+    background: #555 !important;      /* darker gray for the active slide */
+}
+
+/* Make sure the slider can show arrows above images */
+.carousel .carousel-slider,
+.carousel .slider-wrapper {
+    position: relative;               /* ensures z-index works on arrows */
+}
+
+/* Always-visible circular arrow buttons */
+.carousel .control-arrow {
+    opacity: 0.5 !important;            /* always visible */
+    background: #ffffff !important;   /* white circle */
+    border-radius: 50% !important;
+    width: 36px !important;
+    height: 36px !important;
+    top: 50% !important;              /* vertical center */
+    margin-top: -18px !important;     /* half of height to center */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    z-index: 5 !important;            /* above image and caption */
+}
+
+/* Remove default hover fade */
+.carousel .carousel-slider:hover .control-arrow {
+    opacity: 1 !important;
+}
+
+/* Position and draw the triangle icon inside the circle */
+.carousel .control-arrow::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-100%, -50%) !important;
+    filter: invert(100%) !important;
+
+    /* Triangle shape */
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent !important;
+    border-bottom: 7px solid transparent !important;
+}
+
+/* Dark triangle colors for each direction */
+.carousel .control-prev::before {
+    border-right: 9px solid #333333;  /* arrow pointing left */
+}
+
+.carousel .control-next::before {
+    border-left: 9px solid #333333;   /* arrow pointing right */
+}
+
+
 /* Light mode overrides
 @media (prefers-color-scheme: light) {
   :root {

@@ -1,4 +1,35 @@
 import React, { useState, useEffect } from "react";
+import {Carousel} from "react-responsive-carousel";
+
+const scibowl_carousel = [
+    {
+        src: "scibowl1.png",
+    },
+    {
+        src: "scibowl2.png",
+    },
+    {
+        src: "scibowl3.png",
+    },
+    {
+        src: "scibowl4.png",
+    }
+];
+
+const terminal_certs = [
+    {
+        title: "2023 High School Terminal - 2nd Place",
+        date: "July 25, 2023",
+        image: "terminal23.jpg",
+        link: "https://www.credential.net/7b5a2048-f3e2-4421-b7e7-460757d90d81",
+    },
+    {
+        title: "2025 High School Terminal - 2nd Place",
+        date: "August 12, 2025",
+        image: "terminal25.jpg",
+        link: "https://www.credential.net/fc300b87-2a4f-413c-bc5f-ed95e926e716",
+    }
+];
 
 export default function Competitions() {
     const competitions = [
@@ -21,13 +52,40 @@ export default function Competitions() {
                         stable ladder of training for new students and gave returning players structured time to sharpen speed, breadth,
                         and accuracy.
                     </p>
+                    <div className="flex w-full justify-center">
+                        <div className="w-2/3 flex items-center justify-center">
+                            <Carousel
+                                autoPlay
+                                infiniteLoop
+                                showThumbs={false}
+                                showStatus={false}
+                                interval={5000}
+                                transitionTime={600}
+                                swipeable
+                                emulateTouch
+                                className="rounded-lg"
+                            >
+                                {scibowl_carousel.map((s, i) => (
+                                    <div key={i} className="flex flex-col items-center justify-center">
+                                        <img
+                                            src={s.src}
+                                            alt=""
+                                            className="w-full h-[450px] object-contain rounded-lg"
+                                        />
+                                        <br />
+                                    </div>
+                                ))}
+                            </Carousel>
+                        </div>
+                    </div>
+
 
                 </div>
             ),
         },
         {
             key: "citadel",
-            title: "Terminal (Citadel)",
+            title: "Terminal",
             content: (
                 <div>
                     <h3 className="text-xl font-semibold mb-2">Terminal, sponsored by Citadel</h3>
@@ -35,13 +93,46 @@ export default function Competitions() {
                         I compete in Citadel’s Terminal competitions, which challenge teams to design real-time game agents under strict
                         performance limits. My work spans algorithm design, systems engineering, and evaluation.
                     </p>
-                    <ul className="list-disc list-inside text-gray-700 space-y-1">
+                    <ul className="list-disc list-inside text-gray-700 space-y-1 mb-6">
                         <li>Results: 2nd place in North America in 2023 and again in 2025</li>
                         <li>Algorithms: Search, heuristics, state estimation, and resource allocation</li>
                         <li>Engineering: Profiling, latency control, and robust CI for match evaluations</li>
                         <li>Team play: Version control discipline, modular strategy testing, and rapid iteration</li>
                     </ul>
+
+                    <div className="flex md:grid-cols-2 gap-4">
+                        {terminal_certs.map((cert, index) => (
+                            <div
+                                key={index}
+                                className="flex flex-col md:flex-col w-1/2 items-center gap-8 bg-white p-6 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+                            >
+                                {/* Text Info */}
+                                <div className="flex-1">
+                                    <h4 className="text-2xl font-semibold mb-1">{cert.title}</h4>
+                                    <p className="text-gray-600 italic mb-3">{cert.date}</p>
+                                </div>
+
+                                {/* Certificate Image */}
+                                <div className="flex-shrink-0 w-full md:w-[320px]">
+                                    <a
+                                        href={cert.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block overflow-hidden rounded-lg"
+                                    >
+                                        <img
+                                            src={cert.image}
+                                            alt={cert.title}
+                                            className="w-full h-auto transform transition-transform duration-300 hover:scale-105"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
+
+
             ),
         },
         {
@@ -55,12 +146,38 @@ export default function Competitions() {
                         Our team built a full stack from simulation-aware heuristics to match analysis. We traveled to MIT for the finals and
                         placed second nationally in 2025.
                     </p>
-                    <ul className="list-disc list-inside text-gray-700 space-y-1">
+                    <ul className="list-disc list-inside text-gray-700 space-y-1 mb-8">
                         <li>Strategy: Macro economy planning, map control, and opponent modeling</li>
                         <li>Micro: Pathing, collision handling, and adaptive unit behaviors</li>
                         <li>Optimization: Caching, pruning, and constant-time data structures for tight time budgets</li>
                         <li>Collaboration: Code reviews, role clarity, and sprint-style testing for tournament phases</li>
                     </ul>
+                    <div className="flex flex-col items-center justify-center">
+                        <img
+                            src="battlecode1.webp"
+                            alt="Battlecode"
+                            className="w-auto max-w-[800px] h-auto rounded-lg mb-6"
+                        />
+
+                        {/* Two images side by side with equal height */}
+                        <div className="flex flex-row flex-wrap justify-center gap-2">
+                            <div className="w-auto h-[500px] overflow-hidden rounded-lg">
+                                <img
+                                    src="battlecode2.webp"
+                                    alt="Battlecode"
+                                    className="h-full w-auto object-cover"
+                                />
+                            </div>
+                            <div className="w-auto h-[500px] overflow-hidden rounded-lg">
+                                <img
+                                    src="battlecode3.webp"
+                                    alt="Battlecode"
+                                    className="h-full w-auto object-cover"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             ),
         },
