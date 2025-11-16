@@ -18,11 +18,11 @@ export default function Home() {
     }, []);
 
     return (
-        <section className="w-full p-6 bg-white font-classic flex flex-col items-center">
-            <blockquote className="relative text-center text-xl md:text-2xl font-medium italic text-gray-600 max-w-3xl mb-10 leading-relaxed px-8 py-6 rounded-lg bg-gradient-to-br from-accent/5 to-transparent border-l-4 border-accent/30">
+        <section className="w-full p-4 sm:p-6 bg-white font-classic flex flex-col items-center">
+            <blockquote className="relative text-center text-lg sm:text-xl md:text-2xl font-medium italic text-gray-600 max-w-3xl mb-10 leading-relaxed px-4 sm:px-6 md:px-8 py-4 sm:py-6 rounded-lg bg-gradient-to-br from-accent/5 to-transparent border-l-4 border-accent/30">
                 {/* Decorative opening quote */}
                 <span 
-                    className={`absolute -top-2 -left-2 text-6xl md:text-7xl text-accent/20 font-serif transition-all duration-1000 ${
+                    className={`absolute -top-1 -left-1 sm:-top-2 sm:-left-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-accent/20 font-serif transition-all duration-1000 ${
                         quoteVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
                     }`}
                     style={{ transitionDelay: '200ms' }}
@@ -43,7 +43,7 @@ export default function Home() {
                 
                 {/* Decorative closing quote */}
                 <span 
-                    className={`absolute -bottom-4 -right-2 text-6xl md:text-7xl text-accent/20 font-serif transition-all duration-1000 ${
+                    className={`absolute -bottom-2 -right-1 sm:-bottom-4 sm:-right-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-accent/20 font-serif transition-all duration-1000 ${
                         quoteVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
                     }`}
                     style={{ transitionDelay: '400ms' }}
@@ -63,7 +63,7 @@ export default function Home() {
                 </footer>
             </blockquote>
 
-            <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
+            <div className="flex flex-col md:flex-row items-center gap-8 mb-12 mt-12">
                 {/* About Me text on the left */}
                 <div className="flex-1 text-left">
                     <h2 className="text-2xl font-bold mb-4 text-accent">About Me</h2>
@@ -81,14 +81,14 @@ export default function Home() {
                     <img
                         src="/portrait.jpg"
                         alt="Ibrahim Piri portrait"
-                        className="w-[300px] h-[400px] object-cover border-4 border-accent/30"
+                        className="w-full max-w-[250px] sm:max-w-[300px] h-auto aspect-[3/4] object-cover border-4 border-accent/30"
                     />
                 </div>
             </div>
 
             {/* Explore My Work Section */}
-            <div className="w-full max-w-4xl mb-12">
-                <h2 className="text-2xl font-bold mb-6 text-accent text-center">Explore My Work</h2>
+            <div className="w-full max-w-4xl mb-12 px-2 sm:px-0">
+                <h2 className="text-xl sm:text-2xl font-bold mb-6 text-accent text-center">Explore My Work</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <Link
                         to="/mireta"
@@ -185,14 +185,14 @@ export default function Home() {
             </div>
 
             {/* Connect Section */}
-            <div className="w-full max-w-4xl mb-8">
-                <h2 className="text-2xl font-bold mb-6 text-accent text-center">Connect With Me</h2>
-                <div className="flex flex-wrap justify-center gap-4">
+            <div className="w-full max-w-4xl mb-8 px-2 sm:px-0">
+                <h2 className="text-xl sm:text-2xl font-bold mb-6 text-accent text-center">Connect With Me</h2>
+                <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
                     <a
                         href="https://linkedin.com/in/ibrahim-piri"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:text-white transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                        className="px-4 sm:px-6 py-2 sm:py-3 bg-accent text-white rounded-lg text-sm sm:text-base font-semibold hover:text-white transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
                     >
                         LinkedIn
                     </a>
@@ -200,19 +200,19 @@ export default function Home() {
                         href="https://github.com/ibrahimpiri02"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:text-white transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                        className="px-4 sm:px-6 py-2 sm:py-3 bg-accent text-white rounded-lg text-sm sm:text-base font-semibold hover:text-white transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
                     >
                         GitHub
                     </a>
                     <a
                         href="mailto:ibrahimpiri02@gmail.com"
-                        className="px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:text-white transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                        className="px-4 sm:px-6 py-2 sm:py-3 bg-accent text-white rounded-lg text-sm sm:text-base font-semibold hover:text-white transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
                     >
                         Email
                     </a>
                     <a
                         href="mailto:ibrahim@miretaurban.com"
-                        className="px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:text-white transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                        className="px-4 sm:px-6 py-2 sm:py-3 bg-accent text-white rounded-lg text-sm sm:text-base font-semibold hover:text-white transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
                     >
                         Business Email
                     </a>

@@ -4,15 +4,19 @@ import {Carousel} from "react-responsive-carousel";
 const scibowl_carousel = [
     {
         src: "scibowl1.png",
+        cap: "",
     },
     {
         src: "scibowl2.png",
+        cap: "",
     },
     {
         src: "scibowl3.png",
+        cap: "",
     },
     {
         src: "scibowl4.png",
+        cap: "",
     }
 ];
 
@@ -53,7 +57,7 @@ export default function Competitions() {
                         and accuracy.
                     </p>
                     <div className="flex w-full justify-center">
-                        <div className="w-2/3 flex items-center justify-center">
+                        <div className="w-full sm:w-4/5 md:w-2/3 flex items-center justify-center">
                             <Carousel
                                 autoPlay
                                 infiniteLoop
@@ -70,8 +74,11 @@ export default function Competitions() {
                                         <img
                                             src={s.src}
                                             alt=""
-                                            className="w-full h-[450px] object-contain rounded-lg"
+                                            className="w-full h-auto max-h-[300px] sm:max-h-[400px] md:max-h-[450px] object-contain rounded-lg"
                                         />
+                                        <figcaption className="mt-2 text-sm text-gray-700 text-center bg-white rounded px-3 py-2">
+                                            {s.cap}
+                                        </figcaption>
                                         <br />
                                     </div>
                                 ))}
@@ -100,16 +107,16 @@ export default function Competitions() {
                         <li>Team play: Version control discipline, modular strategy testing, and rapid iteration</li>
                     </ul>
 
-                    <div className="flex md:grid-cols-2 gap-4">
+                    <div className="flex flex-col sm:flex-row gap-4">
                         {terminal_certs.map((cert, index) => (
                             <div
                                 key={index}
-                                className="flex flex-col md:flex-col w-1/2 items-center gap-8 bg-white p-6 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+                                className="flex flex-col w-full sm:w-1/2 items-center gap-4 sm:gap-8 bg-white p-4 sm:p-6 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
                             >
                                 {/* Text Info */}
                                 <div className="flex-1">
-                                    <h4 className="text-2xl font-semibold mb-1">{cert.title}</h4>
-                                    <p className="text-gray-600 italic mb-3">{cert.date}</p>
+                                    <h4 className="text-xl sm:text-2xl font-semibold mb-1">{cert.title}</h4>
+                                    <p className="text-gray-600 italic mb-3 text-sm sm:text-base">{cert.date}</p>
                                 </div>
 
                                 {/* Certificate Image */}
@@ -156,23 +163,23 @@ export default function Competitions() {
                         <img
                             src="battlecode1.webp"
                             alt="Battlecode"
-                            className="w-auto max-w-[800px] h-auto rounded-lg mb-6"
+                            className="w-full max-w-full sm:max-w-[600px] md:max-w-[800px] h-auto rounded-lg mb-4 sm:mb-6"
                         />
 
                         {/* Two images side by side with equal height */}
-                        <div className="flex flex-row flex-wrap justify-center gap-2">
-                            <div className="w-auto h-[500px] overflow-hidden rounded-lg">
+                        <div className="flex flex-col sm:flex-row justify-center gap-2 w-full">
+                            <div className="w-full sm:w-auto sm:h-[400px] md:h-[500px] overflow-hidden rounded-lg">
                                 <img
                                     src="battlecode2.webp"
                                     alt="Battlecode"
-                                    className="h-full w-auto object-cover"
+                                    className="w-full sm:w-auto sm:h-full h-auto object-cover"
                                 />
                             </div>
-                            <div className="w-auto h-[500px] overflow-hidden rounded-lg">
+                            <div className="w-full sm:w-auto sm:h-[400px] md:h-[500px] overflow-hidden rounded-lg">
                                 <img
                                     src="battlecode3.webp"
                                     alt="Battlecode"
-                                    className="h-full w-auto object-cover"
+                                    className="w-full sm:w-auto sm:h-full h-auto object-cover"
                                 />
                             </div>
                         </div>
@@ -208,14 +215,14 @@ export default function Competitions() {
     };
 
     return (
-        <div className="w-full flex flex-col md:flex-row gap-8 font-classic bg-white text-gray-800">
+        <div className="w-full flex flex-col md:flex-row gap-4 md:gap-8 font-classic bg-white text-gray-800">
             {/* Sidebar */}
-            <aside className="md:w-1/6 mb-4 md:mb-0 sticky top-20 self-start">
+            <aside className="md:w-1/6 mb-4 md:mb-0 md:sticky md:top-20 md:self-start px-4 md:px-0">
                 <h2 className="text-xl font-bold mb-4 text-accent font-classic">
                     Competitions
                 </h2>
 
-                <ul className="flex md:flex-col gap-4">
+                <ul className="flex flex-row md:flex-col gap-2 md:gap-4 overflow-x-auto md:overflow-x-visible pb-2 md:pb-0">
                     {competitions.map((c) => {
                         const isActive = active === c.key;
                         return (
@@ -244,7 +251,7 @@ export default function Competitions() {
             </aside>
 
             {/* Scrollable content */}
-            <div className="md:flex-1 flex-1 space-y-12 p-6">
+            <div className="md:flex-1 flex-1 space-y-8 md:space-y-12 p-4 sm:p-6">
                 {competitions.map((c) => (
                     <section
                         key={c.key}

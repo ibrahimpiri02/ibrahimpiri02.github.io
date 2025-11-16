@@ -32,14 +32,25 @@ const highlightImages = [
 
 export default function Mireta() {
     return (
-        <section className="w-full p-6 bg-white font-classic">
+        <section className="w-full p-4 sm:p-6 bg-white font-classic">
             <h2 className="text-2xl font-bold mb-4 text-accent">Mireta Urban Dynamics</h2>
 
-            <p className="mb-4">
-                <strong>Mireta Urban Dynamics</strong> is a tech-startup I co-founded in 2023 with Raphael Kay to make urban networks as
-                efficient and adaptive as those found in nature. Our work bridges biology, computation, and urban design to help
-                governments and infrastructure firms create roads, highways, and utility networks that are smarter, greener, and more resilient.
-            </p>
+            <div className="flex flex-col md:flex-row items-start md:items-center mb-4">
+                <p className="md:w-3/4 mb-4 md:mb-0 md:pr-6">
+                    <strong>Mireta Urban Dynamics</strong> is a tech-startup I co-founded in 2023 with Raphael Kay to make urban networks as
+                    efficient and adaptive as those found in nature. Our work bridges biology, computation, and urban design to help
+                    governments and infrastructure firms create roads, highways, and utility networks that are smarter, greener, and more resilient.
+                </p>
+
+                {/* Mireta logo on the right */}
+                <div className="md:w-1/4 flex justify-center">
+                    <img
+                        src="/mireta_logo.png"
+                        alt="Mireta Logo"
+                        className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full object-cover border border-gray-200 shadow-sm"
+                    />
+                </div>
+            </div>
 
             <p className="mb-4">
                 As co-founder and Head of Software, I’ve led the development of Mireta’s entire computational engine:

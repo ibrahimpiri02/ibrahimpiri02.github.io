@@ -2,7 +2,7 @@ import React from "react";
 
 export default function MathCircle() {
   return (
-    <section className="w-full p-6 bg-white font-classic">
+    <section className="w-full p-4 sm:p-6 bg-white font-classic">
       <h2 className="text-2xl font-bold mb-4 text-accent">
         UCLA Olga Radko Endowed Math Circle
       </h2>
@@ -20,7 +20,7 @@ export default function MathCircle() {
                 <img
                     src="/ormc_logo.png"
                     alt="ORMC Logo"
-                    className="w-48 h-48 rounded-full object-cover border border-gray-200 shadow-sm"
+                    className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full object-cover border border-gray-200 shadow-sm"
                 />
             </div>
         </div>

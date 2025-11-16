@@ -19,7 +19,7 @@ function App() {
         <Navbar />
       </header>
 
-      <main className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 py-12 pt-28 pb-20 w-full max-w-7xl mx-auto">
+      <main className="flex-1 flex flex-col items-center justify-center px-2 sm:px-4 md:px-6 lg:px-10 xl:px-16 py-8 sm:py-12 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20 w-full max-w-7xl mx-auto">
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />

@@ -15,7 +15,7 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-30 w-full bg-white/90 backdrop-blur-md shadow-sm py-4 px-10 mt-0">
+    <nav className="sticky top-0 z-30 w-full bg-white/90 backdrop-blur-md shadow-sm py-2 md:py-4 px-4 sm:px-6 md:px-10 mt-0">
       <div className="flex justify-between items-center font-navbar max-w-7xl mx-auto">
         {/* Logo on the left (clickable, links to /home) */}
         <div className="flex-shrink-0">
@@ -23,20 +23,20 @@ export function Navbar() {
             <img
               src="/ibrahimlogo.png"
               alt="Ibrahim Logo"
-              className="h-16 w-auto cursor-pointer transition-transform duration-200 hover:scale-105"
+              className="h-12 md:h-16 w-auto cursor-pointer transition-transform duration-200 hover:scale-105"
             />
           </Link>
         </div>
 
         {/* Navbar Links on the right */}
-        <div className="flex justify-end items-center gap-8">
+        <div className="flex justify-end items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8 flex-wrap">
           {links.map((link) => {
             const isActive = location.pathname === link.to;
             return (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`relative text-base font-semibold tracking-wide uppercase transition-all duration-300 pb-1
+                className={`relative text-xs sm:text-sm md:text-base font-semibold tracking-wide uppercase transition-all duration-300 pb-1 whitespace-nowrap
                   ${isActive ? "text-[#009a8c]" : "text-gray-700 hover:text-[#009a8c]"}
                 `}
               >

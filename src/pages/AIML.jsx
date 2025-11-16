@@ -3,7 +3,7 @@ import React from "react";
 export default function AIML() {
     return (
         <div className="w-full flex justify-center">
-            <section className="w-full bg-white p-6 font-classic">
+            <section className="w-full bg-white p-4 sm:p-6 font-classic">
                 <h2 className="text-2xl font-bold mb-4 text-accent">Machine Learning Research at UCLA</h2>
 
                 <p className="mb-4">
@@ -29,13 +29,24 @@ export default function AIML() {
 
                 <h2 className="text-2xl font-bold mt-10 mb-4 text-accent">Artificial Intelligence & Machine Learning Initiative</h2>
 
-                <p className="mb-4">
-                    At my school, I co-founded and serve as Vice President of the
-                    <strong> Artificial Intelligence and Machine Learning Club</strong>,
-                    where we teach students how to understand and build the systems shaping their world.
-                    What started as a small after-school group became a full-scale initiative to bring
-                    <strong> AI literacy</strong> into classrooms across our district.
-                </p>
+                <div className="flex flex-col md:flex-row items-start md:items-center mb-4">
+                    <p className="md:w-3/4 mb-4 md:mb-0 md:pr-6">
+                        At my school, I co-founded and serve as Vice President of the
+                        <strong> Artificial Intelligence and Machine Learning Club</strong>,
+                        where we teach students how to understand and build the systems shaping their world.
+                        What started as a small after-school group became a full-scale initiative to bring
+                        <strong> AI literacy</strong> into classrooms across our district.
+                    </p>
+
+                    {/* AIML logo on the right */}
+                    <div className="md:w-1/4 flex justify-center">
+                        <img
+                            src="/aiml_logo.png"
+                            alt="AIML Logo"
+                            className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full object-cover border border-gray-200 shadow-sm"
+                        />
+                    </div>
+                </div>
 
                 <p className="mb-4">
                     Alongside my cofounders, I helped develop a{" "} <a
@@ -43,7 +54,7 @@ export default function AIML() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-accent underline hover:text-accent-dark"
-                    > <strong>twelve-week AI curriculum</strong> </a> aligned with California’s Computer Science standards.
+                    > <strong>twelve-week AI curriculum</strong> </a> aligned with California's Computer Science standards.
                     We built interactive Google Colab notebooks, designed visual explanations of core algorithms,
                     and created projects that made abstract concepts like fairness and bias in datasets accessible to younger students.
                 </p>
@@ -55,6 +66,24 @@ export default function AIML() {
                     It represents one of my proudest achievements: transforming our passion for machine learning
                     into something that empowers others to think critically about technology.
                 </p>
+
+                <p className="mb-4">
+                    To scale this initiative and make it more accessible, I developed an entirely new web application at{" "}
+                    <a
+                        href="https://aiml-initiative.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent underline hover:text-accent-dark"
+                    >
+                        <strong>aiml-initiative.org</strong>
+                    </a>
+                    . This platform enables students to learn our curriculum through interactive guides, quizzes, and lab notebooks,
+                    while providing teachers with comprehensive tools to track student progress, manage assignments, and monitor engagement.
+                    The application transforms our curriculum into a fully integrated learning experience that can be deployed across
+                    multiple schools and districts.
+                </p>
+
+                
 
             </section>
         </div>

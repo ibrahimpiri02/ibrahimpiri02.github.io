@@ -82,8 +82,8 @@ const certificates = [
 
 export default function CourseworkAndCertificates() {
   return (
-    <section className="p-8 bg-white font-classic">
-      <h2 className="text-3xl font-semibold mb-2 text-accent text-center">
+    <section className="p-4 sm:p-6 md:p-8 bg-white font-classic">
+      <h2 className="text-2xl sm:text-3xl font-semibold mb-2 text-accent text-center">
         Coursework & Certificates
       </h2>
       <p className="text-gray-600 text-center mb-10 text-sm">
@@ -147,8 +147,8 @@ export default function CourseworkAndCertificates() {
             >
               {/* Text Info */}
               <div className="flex-1">
-                <h4 className="text-2xl font-semibold mb-1">{cert.title}</h4>
-                <p className="text-gray-600 italic mb-3">{cert.date}</p>
+                <h4 className="text-xl sm:text-2xl font-semibold mb-1">{cert.title}</h4>
+                <p className="text-gray-600 italic mb-3 text-sm sm:text-base">{cert.date}</p>
                 <p className="mb-4">{cert.description}</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-700">
                   {cert.details.map((item, i) => (
