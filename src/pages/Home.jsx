@@ -61,7 +61,7 @@ export default function Home() {
           <div className="relative mx-auto hidden md:block">
             <div className="absolute -inset-3 rounded-full border border-accent-light/30" />
             <img
-              src="/portrait.jpg"
+              src="/portrait-square.jpg"
               alt="Ibrahim Piri"
               className="relative h-60 w-60 rounded-full object-cover shadow-2xl shadow-black/50"
             />
