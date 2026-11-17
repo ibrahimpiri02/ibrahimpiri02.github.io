@@ -52,7 +52,7 @@ export default function Research() {
           <Callout>
             It’s the same question behind <Link to="/mireta" className="link">Mireta</Link>: how do simple local
             rules add up to a system that works? A slime mold finds an efficient network with no plan, and gradient
-            descent finds a working model with no plan either. I want to understand both.
+            descent finds a working model with no plan either.
           </Callout>
         </Section>
       </Body>
