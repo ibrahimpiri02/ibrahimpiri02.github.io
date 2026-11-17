@@ -6,7 +6,7 @@ export default function EarlierWork() {
     <Page
       eyebrow="Earlier Work"
       title="Before Caltech"
-      intro="Teaching, competing, and a decade of math circle. These are the projects that got me here."
+      intro="Teaching, competing, and a decade of math circle: the work I did through high school at the Los Angeles Center for Enriched Studies (2022–26)."
     >
       <Section title="Teaching">
         <Entry
@@ -36,7 +36,7 @@ export default function EarlierWork() {
 
         <Entry
           title="UCLA Olga Radko Endowed Math Circle"
-          meta="Student & volunteer instructor"
+          meta="Student, then instructor · 2025–26"
           logo="/ormc_logo.png"
           href="https://circles.math.ucla.edu/circles/circle-about.shtml"
         >

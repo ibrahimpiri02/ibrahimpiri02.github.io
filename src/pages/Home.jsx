@@ -6,17 +6,17 @@ const now = [
   {
     to: "/parsec",
     title: "Caltech PARSEC",
-    text: "Controls subteam. Building the simulation stack for the Daedalus Diver test rocket in Isaac Sim and Isaac Lab.",
+    text: "Controls subteam. Building the Isaac Sim / Isaac Lab simulation for Daedalus Diver, a belly-flop landing testbed.",
   },
   {
     to: "/research",
     title: "Research",
-    text: "Characterizing the critical points of linear self-attention, with Prof. Guido Montúfar's group at UCLA.",
+    text: "Characterizing the critical points of linear self-attention, with Prof. Guido Montúfar's group at UCLA Mathematics.",
   },
   {
     to: "/mireta",
     title: "Mireta Urban Dynamics",
-    text: "Co-founder. Slime-mold-inspired algorithms for designing roads, rail, and utility networks.",
+    text: "Co-founder & CTO. Bio-inspired AI for designing resilient roads, rail, and utility networks.",
   },
   {
     to: "/earlier-work",
@@ -31,11 +31,11 @@ export default function Home() {
       {/* Intro */}
       <section className="flex flex-col-reverse gap-10 sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-xl">
-          <p className="eyebrow mb-4">Caltech</p>
+          <p className="eyebrow mb-4">Computer Science + Aerospace · Caltech ’30</p>
           <h1 className="font-serif text-5xl leading-none tracking-tight sm:text-6xl">Ibrahim Piri</h1>
           <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-            I'm a student at Caltech. I work on rocket guidance and control, the mathematics behind machine
-            learning, and algorithms that borrow from nature to design better networks.
+            I'm a first-year at Caltech studying computer science with a minor in aerospace. I work on rocket
+            control, the mathematics behind machine learning, and bio-inspired algorithms for designing cities.
           </p>
         </div>
         <img

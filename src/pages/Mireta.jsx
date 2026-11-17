@@ -32,7 +32,7 @@ const media = [
 export default function Mireta() {
   return (
     <Page
-      eyebrow="Co-founder · 2023–present"
+      eyebrow="Co-founder & CTO · 2023–present"
       title="Mireta Urban Dynamics"
       intro="Slime mold builds remarkably efficient networks with no central planner. Mireta, which I co-founded with Raphael Kay, turns that behavior into algorithms for designing roads, rail, and utility networks."
     >
