@@ -36,7 +36,22 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-0 bg-night/60 md:bg-transparent md:bg-gradient-to-r md:from-night md:via-night/80 md:to-night/10" />
         <div className="relative mx-auto grid max-w-5xl items-center gap-12 px-6 pb-36 pt-20 sm:pt-28 md:grid-cols-[1fr_auto]">
           <div>
-            <p className="eyebrow mb-6 text-accent-light">Caltech CS ’30 · Los Angeles</p>
+            {/* Portrait on small screens (the side portrait shows from md up) */}
+            <div className="mb-7 flex items-center gap-5 md:hidden">
+              <div className="relative shrink-0">
+                <div className="absolute -inset-1.5 rounded-full border border-accent-light/40" />
+                <img
+                  src="/portrait-square.jpg"
+                  alt="Ibrahim Piri"
+                  className="relative h-20 w-20 rounded-full object-cover shadow-lg shadow-black/60"
+                />
+              </div>
+              <div className="eyebrow space-y-1.5 text-accent-light">
+                <p>Caltech CS ’30</p>
+                <p className="text-white/50">Los Angeles</p>
+              </div>
+            </div>
+            <p className="eyebrow mb-6 hidden text-accent-light md:block">Caltech CS ’30 · Los Angeles</p>
             <h1 className="font-serif text-5xl leading-[1.02] tracking-tight sm:text-7xl">
               Hi, I’m Ibrahim<span className="text-accent-light">.</span>
             </h1>
