@@ -11,7 +11,7 @@ export default function EarlierWork() {
       <Section title="Teaching">
         <Entry
           title="AIML Initiative"
-          meta="Co-founder & Vice President"
+          meta="Co-founder & VP · 2024–26"
           logo="/aiml_logo.png"
           href="https://aiml-initiative.org"
         >
@@ -25,8 +25,9 @@ export default function EarlierWork() {
             >
               twelve-week curriculum
             </a>{" "}
-            aligned with California's CS standards, built around Colab notebooks and hands-on projects on topics
-            like dataset bias. We proposed it to LAUSD as a district-wide AI elective. I also built{" "}
+            aligned with California's CS standards, which I taught weekly to 30+ students using Colab notebooks and
+            hands-on projects on topics like dataset bias. We worked with LAUSD to turn it into a district-wide AI
+            elective. I also built{" "}
             <a href="https://aiml-initiative.org" target="_blank" rel="noopener noreferrer" className="link">
               aiml-initiative.org
             </a>
@@ -87,10 +88,14 @@ export default function EarlierWork() {
           </p>
         </Entry>
 
-        <Entry title="Science Bowl" meta="A-team captain & club president">
+        <Entry title="MESA SoCal Regionals" meta="1st place ×2 · 2025">
+          <p>First place in both Coding Solutions and Math Escape.</p>
+        </Entry>
+
+        <Entry title="Science Bowl" meta="4th, LADWP Regional · 2024">
           <p>
-            Competed from middle school on as a math and physics player, placing 4th in one of the country's most
-            competitive regions. As captain, I worked with faculty and counseling to create a for-credit Science
+            Competed from middle school on as a math and physics player, then captained the A team and led the club.
+            We placed 4th in one of the country's most competitive regions. As captain, I worked with faculty and counseling to create a for-credit Science
             Bowl class so the team could keep training new players after I left.
           </p>
           <div className="grid grid-cols-2 gap-3 pt-2 sm:grid-cols-4">

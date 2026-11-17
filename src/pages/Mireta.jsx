@@ -15,9 +15,9 @@ const recognition = [
     (2025)
   </>,
   "Named one of the top seven government innovations at the 2024 World Governments Summit, Dubai",
-  "Selected for Harvard's Climate Tech Accelerator (2025), one of ~35 ventures",
+  "Selected for the Harvard Climate Circle accelerator, 2025–26 cohort",
   "Presented at Global Rail Abu Dhabi and Urban Tech Summit NYC (2025)",
-  "Pilots with some of the world's largest infrastructure firms",
+  "Pilot engagement with McKinsey on infrastructure use cases",
 ];
 
 const media = [
@@ -42,6 +42,10 @@ export default function Mireta() {
           like population density, flood exposure, or protected habitat, and get networks that balance cost,
           travel time, and resilience. We've used them to propose highway systems, route low-impact transit
           corridors, and refine existing networks for clients.
+        </p>
+        <p>
+          As CTO, I built our Python library of 10+ bio-inspired algorithms for network design, delivered 4+
+          pilots with firms including B+H Architects and Surbana Jurong, and managed 30+ software interns.
         </p>
         <p>
           <a href="https://miretaurban.com" target="_blank" rel="noopener noreferrer" className="link">

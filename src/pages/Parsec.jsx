@@ -18,13 +18,13 @@ export default function Parsec() {
       </Section>
 
       <Section title="My work">
-        <Entry title="Simulation stack" meta="Controls subteam">
+        <Entry title="Simulation stack" meta="Controls subteam · Sept 2026–present">
           <p>
             I'm building Daedalus Diver's simulation in NVIDIA{" "}
             <strong className="font-medium text-ink">Isaac Sim</strong> and{" "}
             <strong className="font-medium text-ink">Isaac Lab</strong>. It gives the team a physics environment
             where controllers for the flip and landing can be developed, trained, and stress-tested before they
-            touch hardware.
+            touch hardware. I also work in SolidWorks to bring the vehicle geometry into the sim.
           </p>
         </Entry>
         {/* Add sim screenshots/clips here with <Figure src="/..." caption="..." /> once available. */}

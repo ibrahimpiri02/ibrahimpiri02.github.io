@@ -11,12 +11,17 @@ export default function Research() {
       <Section title="Projects">
         <Entry
           title="Critical points of linear self-attention"
-          meta="UCLA Mathematics · 2025–26"
+          meta="UCLA Mathematics · Nov 2025–June 2026"
         >
           <p>
-            With Khang Nguyen and Prof. Guido Montúfar, I worked on characterizing the critical points of the training loss for linear self-attention. We used linear algebra
+            With PhD student Khang Nguyen, Prof. Guido Montúfar, and two other high school collaborators, I
+            worked on characterizing the critical points of the training loss for linear self-attention. We used linear algebra
             and matrix calculus to explain when these models converge, why some configurations are stable, and how
             architecture changes that picture.
+          </p>
+          <p>
+            I ran Python experiments comparing our theoretical predictions against how trained models actually
+            behave, and presented the work in a talk at UCLA to an audience of about 50.
           </p>
         </Entry>
       </Section>
