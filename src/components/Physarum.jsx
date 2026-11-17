@@ -113,19 +113,42 @@ export default function Physarum({ seed = 7, density = 0.09, scale = 2, classNam
       ctx.putImageData(img, 0, 0);
     };
 
-    // Pointer adds food the network grows toward
-    const onMove = (e) => {
+    // Pointer / finger adds food that lingers briefly; the network grows toward it.
+    // Touch is handled with passive touch events because the browser cancels
+    // pointer events as soon as a drag turns into a scroll.
+    const foods = [];
+    const FOOD_LIFE = 45; // frames
+    const addFood = (clientX, clientY) => {
       const r = canvas.getBoundingClientRect();
-      const px = Math.round(((e.clientX - r.left) / r.width) * W);
-      const py = Math.round(((e.clientY - r.top) / r.height) * H);
-      for (let dy = -2; dy <= 2; dy++)
-        for (let dx = -2; dx <= 2; dx++) {
-          const x = px + dx, y = py + dy;
-          if (x >= 0 && x < W && y >= 0 && y < H) trail[y * W + x] += 30;
-        }
+      const x = ((clientX - r.left) / r.width) * W;
+      const y = ((clientY - r.top) / r.height) * H;
+      if (x < 0 || x >= W || y < 0 || y >= H) return;
+      foods.push({ x: Math.round(x), y: Math.round(y), life: FOOD_LIFE });
+      if (foods.length > 60) foods.shift();
+    };
+    const feed = () => {
+      for (let k = foods.length - 1; k >= 0; k--) {
+        const f = foods[k];
+        const amt = 25 * (f.life / FOOD_LIFE);
+        for (let dy = -3; dy <= 3; dy++)
+          for (let dx = -3; dx <= 3; dx++) {
+            if (dx * dx + dy * dy > 9) continue;
+            const x = f.x + dx, y = f.y + dy;
+            if (x >= 0 && x < W && y >= 0 && y < H) trail[y * W + x] += amt;
+          }
+        if (--f.life <= 0) foods.splice(k, 1);
+      }
+    };
+    const onPointer = (e) => {
+      if (e.pointerType !== "touch") addFood(e.clientX, e.clientY);
+    };
+    const onTouch = (e) => {
+      for (const t of e.touches) addFood(t.clientX, t.clientY);
     };
     const host = canvas.parentElement;
-    host.addEventListener("pointermove", onMove);
+    host.addEventListener("pointermove", onPointer);
+    host.addEventListener("touchstart", onTouch, { passive: true });
+    host.addEventListener("touchmove", onTouch, { passive: true });
 
     // Warm up so the first frame already shows a network
     for (let i = 0; i < 120; i++) step();
@@ -135,6 +158,7 @@ export default function Physarum({ seed = 7, density = 0.09, scale = 2, classNam
     let raf = 0;
     let visible = true;
     const loop = () => {
+      feed();
       step();
       draw();
       raf = requestAnimationFrame(loop);
@@ -149,7 +173,9 @@ export default function Physarum({ seed = 7, density = 0.09, scale = 2, classNam
     return () => {
       cancelAnimationFrame(raf);
       io.disconnect();
-      host.removeEventListener("pointermove", onMove);
+      host.removeEventListener("pointermove", onPointer);
+      host.removeEventListener("touchstart", onTouch);
+      host.removeEventListener("touchmove", onTouch);
     };
   }, [seed, density, scale]);
 

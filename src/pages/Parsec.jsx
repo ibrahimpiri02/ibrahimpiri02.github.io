@@ -15,10 +15,8 @@ export default function Parsec() {
       <Body>
         <Section index="01" title="Daedalus Diver">
           <p>
-            Landing a rocket is a controls problem first. You estimate where you are, decide where you need to be,
-            and command the engine and actuators to close the gap hundreds of times a second, all the way down.
-            So before any guidance or control code flies on Icarus, it flies on our Daedalus testbeds, where a bad
-            day costs a propeller instead of a rocket.
+            Before any guidance or control code flies on Icarus, it flies on our Daedalus testbeds, where a bad day
+            costs a propeller instead of a rocket.
           </p>
           <p>
             Daedalus Diver takes on the hardest maneuver of all: the{" "}

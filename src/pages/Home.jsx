@@ -33,7 +33,7 @@ export default function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-night text-white">
         <Physarum seed={11} density={0.1} />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-night via-night/80 to-night/10" />
+        <div className="pointer-events-none absolute inset-0 bg-night/60 md:bg-transparent md:bg-gradient-to-r md:from-night md:via-night/80 md:to-night/10" />
         <div className="relative mx-auto grid max-w-5xl items-center gap-12 px-6 pb-36 pt-20 sm:pt-28 md:grid-cols-[1fr_auto]">
           <div>
             <p className="eyebrow mb-6 text-accent-light">Caltech CS ’30 · Los Angeles</p>
@@ -144,7 +144,7 @@ export default function Home() {
                 <p className="font-mono text-xs text-accent">Before Caltech</p>
                 <h3 className="mt-3 font-serif text-2xl tracking-tight text-ink">Earlier work</h3>
                 <p className="mt-3 max-w-2xl leading-relaxed text-ink-soft">
-                  An AI curriculum for LA schools, a decade at the UCLA Math Circle, and a lot of competitions:
+                  A decade at the UCLA Math Circle, an AI curriculum for LA schools, and a lot of competitions:
                   Science Bowl, Citadel Terminal, and MIT Battlecode.
                 </p>
               </div>
@@ -162,8 +162,7 @@ export default function Home() {
             <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">A little more about me</h2>
             <div className="mt-6 space-y-4 text-[1.0625rem] leading-relaxed text-ink-soft">
               <p>
-                I was born in Baku, Azerbaijan, and grew up in Los Angeles. I speak Azeri fluently and Russian
-                conversationally.
+                I speak Azeri fluently and Russian conversationally.
               </p>
               <p>
                 I’ve been waking up early for rocket launch livestreams for more than ten years. Now I get to work

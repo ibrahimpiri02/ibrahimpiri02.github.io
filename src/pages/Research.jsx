@@ -36,6 +36,7 @@ export default function Research() {
           </div>
           <Bullets
             items={[
+              "Led the mathematical analysis, using matrix calculus to derive and characterize the critical points of the training loss",
               "Ran Python experiments to test our theoretical predictions against how trained models actually behave",
               "Presented the work in a talk at UCLA to an audience of about 50",
             ]}

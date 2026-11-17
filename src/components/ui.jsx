@@ -6,7 +6,7 @@ export function PageHero({ eyebrow, title, intro, seed = 3, children }) {
   return (
     <header className="relative overflow-hidden bg-night text-white">
       <Physarum seed={seed} density={0.07} />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-night via-night/85 to-night/30" />
+      <div className="pointer-events-none absolute inset-0 bg-night/65 md:bg-transparent md:bg-gradient-to-r md:from-night md:via-night/85 md:to-night/30" />
       <div className="relative mx-auto max-w-5xl px-6 pb-16 pt-20 sm:pb-20 sm:pt-28">
         {eyebrow && <p className="eyebrow mb-5 text-accent-light">{eyebrow}</p>}
         <h1 className="max-w-3xl font-serif text-4xl leading-[1.05] tracking-tight sm:text-6xl">{title}</h1>

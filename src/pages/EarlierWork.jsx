@@ -1,7 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { PageHero, Body, Section, Entry, Figure, Bullets, Quote } from "../components/ui";
-
-const ext = { target: "_blank", rel: "noopener noreferrer", className: "link" };
 
 const terminalCerts = [
   { year: "2023", image: "/terminal23.jpg", link: "https://www.credential.net/7b5a2048-f3e2-4421-b7e7-460757d90d81" },
@@ -19,7 +18,35 @@ export default function EarlierWork() {
       />
 
       <Body>
-        <Section index="01" title="AIML Initiative">
+        <Section index="01" title="UCLA Math Circle">
+          <Entry
+            title="Olga Radko Endowed Math Circle"
+            meta="Student, then instructor"
+            logo="/ormc_logo.png"
+            href="https://circles.math.ucla.edu/circles/circle-about.shtml"
+          >
+            <p>
+              ORMC became the foundation of my math education. Over a
+              decade I worked through number theory, combinatorics, functional equations, geometry, and graph
+              theory, often taught by former International Math Olympiad gold medalists. Each session worked like
+              small-scale research: make a conjecture, refine the proof, compare approaches.
+            </p>
+            <p>
+              For my last year I taught the Beginners group, writing problem sets and lessons that walked
+              elementary schoolers toward their first structured proofs. ORMC is also where my{" "}
+              <Link to="/research" className="link">
+                machine learning research
+              </Link>{" "}
+              began.
+            </p>
+          </Entry>
+          <Quote cite="On what ORMC gave me">
+            Mathematics became less a subject and more a way of seeing problems: through structure, clarity of
+            reasoning, and the search for elegant solutions.
+          </Quote>
+        </Section>
+
+        <Section index="02" title="AIML Initiative">
           <Entry
             title="Artificial Intelligence & Machine Learning Initiative"
             meta="Co-founder & VP · 2024–26"
@@ -27,10 +54,7 @@ export default function EarlierWork() {
           >
             <p>
               We started as a small after-school AI club and grew into an effort to bring AI literacy into
-              classrooms across Los Angeles. My co-founders and I wrote a{" "}
-              <a href="https://drive.google.com/drive/folders/10xwsjAUvP-medQ868O97ZcFDnvFuzs3o?usp=sharing" {...ext}>
-                twelve-week curriculum
-              </a>{" "}
+              classrooms across Los Angeles. My co-founders and I wrote a twelve-week curriculum
               aligned with California’s Computer Science standards: Colab notebooks, visual explanations of core
               algorithms, and projects that make ideas like fairness and dataset bias concrete.
             </p>
@@ -38,14 +62,7 @@ export default function EarlierWork() {
               items={[
                 "Taught the curriculum live every week to 30+ students",
                 "Presented to LAUSD educators and curriculum specialists, and worked with the district to turn it into a district-wide AI elective",
-                <>
-                  Built{" "}
-                  <a href="https://aiml-initiative.org" {...ext}>
-                    aiml-initiative.org
-                  </a>
-                  , where students work through interactive guides, quizzes, and lab notebooks, and teachers track
-                  progress and manage assignments
-                </>,
+                "Built a web app where students work through interactive guides, quizzes, and lab notebooks, and teachers track progress and manage assignments",
               ]}
             />
             <p>
@@ -55,7 +72,7 @@ export default function EarlierWork() {
           </Entry>
         </Section>
 
-        <Section index="02" title="Competitions">
+        <Section index="03" title="Competitions">
           <Entry title="MIT Battlecode" meta="2nd place · 2025">
             <p>
               A real-time strategy AI competition where you win on both micro control and macro planning under
@@ -127,29 +144,6 @@ export default function EarlierWork() {
           </Entry>
         </Section>
 
-        <Section index="03" title="UCLA Math Circle">
-          <Entry
-            title="Olga Radko Endowed Math Circle"
-            meta="Student, then instructor"
-            logo="/ormc_logo.png"
-            href="https://circles.math.ucla.edu/circles/circle-about.shtml"
-          >
-            <p>
-              I passed the entrance exam at eight, and ORMC became the foundation of my math education. Over a
-              decade I worked through number theory, combinatorics, functional equations, geometry, and graph
-              theory, often taught by former International Math Olympiad gold medalists. Each session worked like
-              small-scale research: make a conjecture, refine the proof, compare approaches.
-            </p>
-            <p>
-              For my last year I taught the Beginners group, writing problem sets and lessons that walked
-              elementary schoolers toward their first structured proofs. ORMC is also where my UCLA research began.
-            </p>
-          </Entry>
-          <Quote cite="On what ORMC gave me">
-            Mathematics became less a subject and more a way of seeing problems: through structure, clarity of
-            reasoning, and the search for elegant solutions.
-          </Quote>
-        </Section>
       </Body>
     </>
   );
