@@ -1,32 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}"
-  ],
+export default {
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        accent: {
-          DEFAULT: '#009a8c', // Tailwind blue-600
-          light: '#009a8c', // blue-500
-          dark: '#008075', // blue-800
-        },
+        accent: { DEFAULT: "#009a8c", dark: "#007a6f" },
+        ink: { DEFAULT: "#111418", soft: "#4a5058", faint: "#8a9099" },
       },
       fontFamily: {
-        classic: [
-          'Georgia',
-          'Times New Roman',
-          'serif',
-        ],
-        sans: [
-          'Inter',
-          'system-ui',
-          'Avenir',
-          'Helvetica',
-          'Arial',
-          'sans-serif',
-        ],
+        sans: ["Inter", "system-ui", "Helvetica", "Arial", "sans-serif"],
+        serif: ["Newsreader", "Georgia", "Times New Roman", "serif"],
       },
     },
   },

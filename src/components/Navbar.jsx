@@ -1,56 +1,79 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { RESUME_URL } from "../site";
+
+
+const links = [
+  { to: "/parsec", label: "PARSEC" },
+  { to: "/research", label: "Research" },
+  { to: "/mireta", label: "Mireta" },
+  { to: "/earlier-work", label: "Earlier Work" },
+];
+
+function navClass({ isActive }) {
+  return `text-sm transition-colors ${
+    isActive ? "text-accent" : "text-ink-soft hover:text-ink"
+  }`;
+}
 
 export function Navbar() {
-  const location = useLocation();
+  const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
 
-  const links = [
-      { to: "/home", label: "Home" },
-      { to: "/mireta", label: "Mireta" },
-      { to: "/aiml", label: "AI & Machine Learning" },
-      { to: "/mathcircle", label: "Math Circle" },
-      { to: "/competitions", label: "Competitions" },
-      { to: "/coursework", label: "Coursework" },
-      //{ to: "/activities", label: "Activities" },
-  ];
+  useEffect(() => setOpen(false), [pathname]);
+
+  const resumeLink = (
+    <a
+      href={RESUME_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-sm text-ink-soft transition-colors hover:text-ink"
+    >
+      Resume&nbsp;<span aria-hidden="true">↗</span>
+    </a>
+  );
 
   return (
-    <nav className="sticky top-0 z-30 w-full bg-white/90 backdrop-blur-md shadow-sm py-2 md:py-4 px-4 sm:px-6 md:px-10 mt-0">
-      <div className="flex justify-between items-center font-navbar max-w-7xl mx-auto">
-        {/* Logo on the left (clickable, links to /home) */}
-        <div className="flex-shrink-0">
-          <Link to="/home">
-            <img
-              src="/ibrahimlogo.png"
-              alt="Ibrahim Logo"
-              className="h-12 md:h-16 w-auto cursor-pointer transition-transform duration-200 hover:scale-105"
-            />
-          </Link>
+    <nav className="border-b border-black/5 bg-white/85 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-3xl items-center justify-between px-6">
+        <Link to="/" aria-label="Home" className="shrink-0">
+          <img src="/ibrahimlogo.png" alt="Ibrahim Piri" className="h-10 w-auto" />
+        </Link>
+
+        {/* Desktop */}
+        <div className="hidden items-center gap-8 md:flex">
+          {links.map((l) => (
+            <NavLink key={l.to} to={l.to} className={navClass}>
+              {l.label}
+            </NavLink>
+          ))}
+          {resumeLink}
         </div>
 
-        {/* Navbar Links on the right */}
-        <div className="flex justify-end items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8 flex-wrap">
-          {links.map((link) => {
-            const isActive = location.pathname === link.to;
-            return (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`relative text-xs sm:text-sm md:text-base font-semibold tracking-wide uppercase transition-all duration-300 pb-1 whitespace-nowrap
-                  ${isActive ? "text-[#009a8c]" : "text-gray-700 hover:text-[#009a8c]"}
-                `}
-              >
-                {link.label}
-                <span
-                  className={`absolute left-0 bottom-0 h-[2px] rounded-full transition-all duration-300
-                    ${isActive ? "w-full bg-[#009a8c]" : "w-0 bg-[#009a8c] hover:w-full"}
-                  `}
-                />
-              </Link>
-            );
-          })}
-        </div>
+        {/* Mobile toggle */}
+        <button
+          type="button"
+          onClick={() => setOpen((o) => !o)}
+          aria-expanded={open}
+          aria-label="Toggle menu"
+          className="-mr-2 p-2 text-ink-soft md:hidden"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+            {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+          </svg>
+        </button>
       </div>
+
+      {open && (
+        <div className="flex flex-col gap-4 border-t border-black/5 px-6 py-5 md:hidden">
+          {links.map((l) => (
+            <NavLink key={l.to} to={l.to} className={navClass}>
+              {l.label}
+            </NavLink>
+          ))}
+          {resumeLink}
+        </div>
+      )}
     </nav>
   );
 }

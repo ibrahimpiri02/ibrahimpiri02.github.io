@@ -1,223 +1,101 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { CONTACT, RESUME_URL } from "../site";
+
+const now = [
+  {
+    to: "/parsec",
+    title: "Caltech PARSEC",
+    text: "Controls subteam. Building the simulation stack for the Daedalus Diver test rocket in Isaac Sim and Isaac Lab.",
+  },
+  {
+    to: "/research",
+    title: "Research",
+    text: "Characterizing the critical points of linear self-attention, with Prof. Guido Montúfar's group at UCLA.",
+  },
+  {
+    to: "/mireta",
+    title: "Mireta Urban Dynamics",
+    text: "Co-founder. Slime-mold-inspired algorithms for designing roads, rail, and utility networks.",
+  },
+  {
+    to: "/earlier-work",
+    title: "Earlier Work",
+    text: "The AIML Initiative, Science Bowl, Citadel Terminal, MIT Battlecode, and the UCLA Math Circle.",
+  },
+];
 
 export default function Home() {
-    const [quoteVisible, setQuoteVisible] = useState(false);
-    const [footerVisible, setFooterVisible] = useState(false);
+  return (
+    <div className="mx-auto w-full max-w-3xl px-6 pt-16 sm:pt-24">
+      {/* Intro */}
+      <section className="flex flex-col-reverse gap-10 sm:flex-row sm:items-end sm:justify-between">
+        <div className="max-w-xl">
+          <p className="eyebrow mb-4">Caltech</p>
+          <h1 className="font-serif text-5xl leading-none tracking-tight sm:text-6xl">Ibrahim Piri</h1>
+          <p className="mt-6 text-lg leading-relaxed text-ink-soft">
+            I'm a student at Caltech. I work on rocket guidance and control, the mathematics behind machine
+            learning, and algorithms that borrow from nature to design better networks.
+          </p>
+        </div>
+        <img
+          src="/portrait.jpg"
+          alt="Portrait of Ibrahim Piri"
+          className="h-40 w-32 shrink-0 rounded-md object-cover grayscale-[15%] sm:h-48 sm:w-36"
+        />
+      </section>
 
-    useEffect(() => {
-        // Trigger quote animation
-        const timer1 = setTimeout(() => setQuoteVisible(true), 100);
-        // Trigger footer animation after quote
-        const timer2 = setTimeout(() => setFooterVisible(true), 800);
-        
-        return () => {
-            clearTimeout(timer1);
-            clearTimeout(timer2);
-        };
-    }, []);
+      <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="link">
+          Resume
+        </a>
+        {CONTACT.map((c) => (
+          <a
+            key={c.label}
+            href={c.href}
+            target={c.href.startsWith("http") ? "_blank" : undefined}
+            rel="noopener noreferrer"
+            className="link"
+          >
+            {c.label}
+          </a>
+        ))}
+      </div>
 
-    return (
-        <section className="w-full p-4 sm:p-6 bg-white font-classic flex flex-col items-center">
-            <blockquote className="relative text-center text-lg sm:text-xl md:text-2xl font-medium italic text-gray-600 max-w-3xl mb-10 leading-relaxed px-4 sm:px-6 md:px-8 py-4 sm:py-6 rounded-lg bg-gradient-to-br from-accent/5 to-transparent border-l-4 border-accent/30">
-                {/* Decorative opening quote */}
-                <span 
-                    className={`absolute -top-1 -left-1 sm:-top-2 sm:-left-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-accent/20 font-serif transition-all duration-1000 ${
-                        quoteVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
-                    }`}
-                    style={{ transitionDelay: '200ms' }}
+      {/* What I'm working on */}
+      <section className="mt-24">
+        <h2 className="mb-2 text-xs font-medium uppercase tracking-[0.14em] text-ink-faint">Work</h2>
+        <ul className="divide-y divide-black/5">
+          {now.map((item) => (
+            <li key={item.to}>
+              <Link
+                to={item.to}
+                className="group flex items-baseline justify-between gap-6 py-6 transition-colors"
+              >
+                <div>
+                  <h3 className="font-medium text-ink transition-colors group-hover:text-accent">{item.title}</h3>
+                  <p className="mt-1 leading-relaxed text-ink-soft">{item.text}</p>
+                </div>
+                <span
+                  aria-hidden="true"
+                  className="text-ink-faint transition-transform group-hover:translate-x-1 group-hover:text-accent"
                 >
-                    {" "}"
+                  →
                 </span>
-                
-                {/* Quote text */}
-                <span 
-                    className={`inline-block transition-all duration-1000 ${
-                        quoteVisible 
-                            ? 'opacity-100 translate-y-0' 
-                            : 'opacity-0 translate-y-4'
-                    }`}
-                >
-                    Luck plays a role in success, but the harder you work and the more you prepare, the luckier you get.
-                </span>
-                
-                {/* Decorative closing quote */}
-                <span 
-                    className={`absolute -bottom-2 -right-1 sm:-bottom-4 sm:-right-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-accent/20 font-serif transition-all duration-1000 ${
-                        quoteVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
-                    }`}
-                    style={{ transitionDelay: '400ms' }}
-                >
-                    "
-                </span>
-                
-                {/* Footer with staggered animation */}
-                <footer 
-                    className={`mt-4 text-gray-500 text-base transition-all duration-1000 ${
-                        footerVisible 
-                            ? 'opacity-100 translate-y-0' 
-                            : 'opacity-0 translate-y-4'
-                    }`}
-                >
-                    — Jim Simons
-                </footer>
-            </blockquote>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-            <div className="flex flex-col md:flex-row items-center gap-8 mb-12 mt-12">
-                {/* About Me text on the left */}
-                <div className="flex-1 text-left">
-                    <h2 className="text-2xl font-bold mb-4 text-accent">About Me</h2>
-                    <p className="mb-4">
-                        Hello! I’m Ibrahim Piri and I'm a high school senior excited to use my passions to understand and improve the world!
-                        I’ve always loved finding patterns in complex systems and turning them into something practical. I'm drawn to challenges
-                        that force me to think deeply and build things that matter, transforming an idea into something real and useful.
-                        When I'm not working on a project, you'll probably find me playing ping pong, chess, or a good board game.
-                        I also love watching rocket launch livestreams! I hope to see one in-person someday :)
-                    </p>
-                </div>
-
-                {/* Portrait on the right */}
-                <div className="flex-shrink-0">
-                    <img
-                        src="/portrait.jpg"
-                        alt="Ibrahim Piri portrait"
-                        className="w-full max-w-[250px] sm:max-w-[300px] h-auto aspect-[3/4] object-cover border-4 border-accent/30"
-                    />
-                </div>
-            </div>
-
-            {/* Explore My Work Section */}
-            <div className="w-full max-w-4xl mb-12 px-2 sm:px-0">
-                <h2 className="text-xl sm:text-2xl font-bold mb-6 text-accent text-center">Explore My Work</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <Link
-                        to="/mireta"
-                        className="group relative overflow-hidden bg-gradient-to-br from-accent/10 to-accent/5 border-2 border-accent/30 rounded-lg p-6 hover:border-accent hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                    >
-                        <h3 className="text-xl font-semibold mb-2 text-accent group-hover:text-accent-dark transition-colors">
-                            Mireta Urban Dynamics
-                        </h3>
-                        <p className="text-gray-700 text-sm mb-4">
-                            Co-founded startup using biologically inspired algorithms for urban network optimization
-                        </p>
-                        <span className="text-accent font-medium text-sm group-hover:underline">
-                            Learn more →
-                        </span>
-                    </Link>
-
-                    <Link
-                        to="/aiml"
-                        className="group relative overflow-hidden bg-gradient-to-br from-accent/10 to-accent/5 border-2 border-accent/30 rounded-lg p-6 hover:border-accent hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                    >
-                        <h3 className="text-xl font-semibold mb-2 text-accent group-hover:text-accent-dark transition-colors">
-                            AI & Machine Learning
-                        </h3>
-                        <p className="text-gray-700 text-sm mb-4">
-                            Research at UCLA and co-founded AI/ML initiative at my school
-                        </p>
-                        <span className="text-accent font-medium text-sm group-hover:underline">
-                            Learn more →
-                        </span>
-                    </Link>
-
-                    <Link
-                        to="/competitions"
-                        className="group relative overflow-hidden bg-gradient-to-br from-accent/10 to-accent/5 border-2 border-accent/30 rounded-lg p-6 hover:border-accent hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                    >
-                        <h3 className="text-xl font-semibold mb-2 text-accent group-hover:text-accent-dark transition-colors">
-                            Competitions
-                        </h3>
-                        <p className="text-gray-700 text-sm mb-4">
-                            Science Bowl, Terminal (Citadel), and MIT Battlecode achievements
-                        </p>
-                        <span className="text-accent font-medium text-sm group-hover:underline">
-                            Learn more →
-                        </span>
-                    </Link>
-
-                    <Link
-                        to="/coursework"
-                        className="group relative overflow-hidden bg-gradient-to-br from-accent/10 to-accent/5 border-2 border-accent/30 rounded-lg p-6 hover:border-accent hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                    >
-                        <h3 className="text-xl font-semibold mb-2 text-accent group-hover:text-accent-dark transition-colors">
-                            Coursework & Certificates
-                        </h3>
-                        <p className="text-gray-700 text-sm mb-4">
-                            Academic coursework and online certifications in CS and math
-                        </p>
-                        <span className="text-accent font-medium text-sm group-hover:underline">
-                            Learn more →
-                        </span>
-                    </Link>
-
-                    <Link
-                        to="/mathcircle"
-                        className="group relative overflow-hidden bg-gradient-to-br from-accent/10 to-accent/5 border-2 border-accent/30 rounded-lg p-6 hover:border-accent hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                    >
-                        <h3 className="text-xl font-semibold mb-2 text-accent group-hover:text-accent-dark transition-colors">
-                            Math Circle
-                        </h3>
-                        <p className="text-gray-700 text-sm mb-4">
-                            Teaching and exploring advanced mathematics with peers
-                        </p>
-                        <span className="text-accent font-medium text-sm group-hover:underline">
-                            Learn more →
-                        </span>
-                    </Link>
-
-                    <a
-                        href="https://miretaurban.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group relative overflow-hidden bg-gradient-to-br from-accent/10 to-accent/5 border-2 border-accent/30 rounded-lg p-6 hover:border-accent hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                    >
-                        <h3 className="text-xl font-semibold mb-2 text-accent group-hover:text-accent-dark transition-colors">
-                            Visit Mireta Website
-                        </h3>
-                        <p className="text-gray-700 text-sm mb-4">
-                            Explore Mireta's projects and learn about our urban network solutions
-                        </p>
-                        <span className="text-accent font-medium text-sm group-hover:underline">
-                            Visit site →
-                        </span>
-                    </a>
-                </div>
-            </div>
-
-            {/* Connect Section */}
-            <div className="w-full max-w-4xl mb-8 px-2 sm:px-0">
-                <h2 className="text-xl sm:text-2xl font-bold mb-6 text-accent text-center">Connect With Me</h2>
-                <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-                    <a
-                        href="https://linkedin.com/in/ibrahim-piri"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 sm:px-6 py-2 sm:py-3 bg-accent text-white rounded-lg text-sm sm:text-base font-semibold hover:text-white transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
-                    >
-                        LinkedIn
-                    </a>
-                    <a
-                        href="https://github.com/ibrahimpiri02"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 sm:px-6 py-2 sm:py-3 bg-accent text-white rounded-lg text-sm sm:text-base font-semibold hover:text-white transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
-                    >
-                        GitHub
-                    </a>
-                    <a
-                        href="mailto:ibrahimpiri02@gmail.com"
-                        className="px-4 sm:px-6 py-2 sm:py-3 bg-accent text-white rounded-lg text-sm sm:text-base font-semibold hover:text-white transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
-                    >
-                        Email
-                    </a>
-                    <a
-                        href="mailto:ibrahim@miretaurban.com"
-                        className="px-4 sm:px-6 py-2 sm:py-3 bg-accent text-white rounded-lg text-sm sm:text-base font-semibold hover:text-white transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
-                    >
-                        Business Email
-                    </a>
-                </div>
-            </div>
-        </section>
-    );
+      {/* Personal */}
+      <section className="mt-20">
+        <h2 className="mb-4 text-xs font-medium uppercase tracking-[0.14em] text-ink-faint">Otherwise</h2>
+        <p className="leading-relaxed text-ink-soft">
+          You'll usually find me playing ping pong, chess, or a good board game, or up early for a rocket launch
+          livestream.
+        </p>
+      </section>
+    </div>
+  );
 }

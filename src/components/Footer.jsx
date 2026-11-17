@@ -1,15 +1,24 @@
 import React from "react";
+import { CONTACT } from "../site";
+
 
 export function Footer() {
   return (
-    <footer className="w-full bg-gray-50 border-t py-4 mt-8 flex flex-col items-center text-xs sm:text-sm text-gray-600 font-classic px-4">
-      <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-2">
-        <a href="https://linkedin.com/in/ibrahim-piri" target="_blank" rel="noopener noreferrer" className="hover:underline text-accent-dark">LinkedIn</a>
-        <a href="https://github.com/ibrahimpiri02" target="_blank" rel="noopener noreferrer" className="hover:underline text-accent-dark">GitHub</a>
-        <a href="mailto:ibrahimpiri02@gmail.com" className="hover:underline text-accent-dark">Email</a>
-        <a href="mailto:ibrahim@miretaurban.com" className="hover:underline text-accent-dark">Business Email</a>
+    <footer className="mx-auto mt-24 flex w-full max-w-3xl flex-col gap-3 border-t border-black/5 px-6 py-8 text-sm text-ink-faint sm:flex-row sm:items-center sm:justify-between">
+      <span>&copy; {new Date().getFullYear()} Ibrahim Piri</span>
+      <div className="flex gap-6">
+        {CONTACT.map((c) => (
+          <a
+            key={c.label}
+            href={c.href}
+            target={c.href.startsWith("http") ? "_blank" : undefined}
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-ink"
+          >
+            {c.label}
+          </a>
+        ))}
       </div>
-      <div className="text-accent text-center">&copy; {new Date().getFullYear()} Ibrahim Piri</div>
     </footer>
   );
 }

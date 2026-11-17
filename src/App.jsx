@@ -2,42 +2,39 @@ import React from "react";
 import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
-
 import ScrollToTop from "./ScrollToTop";
-import Home from "./pages/Home";
-import Mireta from "./pages/Mireta";
-import MathCircle from "./pages/MathCircle";
-import Competitions from "./pages/Competitions";
-import Coursework from "./pages/Coursework";
-import AIML from "./pages/AIML.jsx";
-import Activities from "./pages/Activities";
 
-function App() {
+import Home from "./pages/Home";
+import Parsec from "./pages/Parsec";
+import Research from "./pages/Research";
+import Mireta from "./pages/Mireta";
+import EarlierWork from "./pages/EarlierWork";
+
+export default function App() {
   return (
     <Router>
-      <header className="sticky top-0 left-0 w-full z-50">
-        <Navbar />
-      </header>
-
-      <main className="flex-1 flex flex-col items-center justify-center px-2 sm:px-4 md:px-6 lg:px-10 xl:px-16 py-8 sm:py-12 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20 w-full max-w-7xl mx-auto">
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Navigate to="/home" replace />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/mireta" element={<Mireta />} />
-          <Route path="/mathcircle" element={<MathCircle />} />
-          <Route path="/competitions" element={<Competitions />} />
-          <Route path="/coursework" element={<Coursework />} />
-          <Route path="/aiml" element={<AIML />} />
-          <Route path="/activities" element={<Activities />} />
-        </Routes>
-      </main>
-
-      <footer className="w-full z-10">
+      <ScrollToTop />
+      <div className="flex min-h-screen flex-col">
+        <header className="sticky top-0 z-50">
+          <Navbar />
+        </header>
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/parsec" element={<Parsec />} />
+            <Route path="/research" element={<Research />} />
+            <Route path="/mireta" element={<Mireta />} />
+            <Route path="/earlier-work" element={<EarlierWork />} />
+            {/* Old routes from the previous site */}
+            <Route path="/home" element={<Navigate to="/" replace />} />
+            <Route path="/aiml" element={<Navigate to="/research" replace />} />
+            <Route path="/competitions" element={<Navigate to="/earlier-work" replace />} />
+            <Route path="/mathcircle" element={<Navigate to="/earlier-work" replace />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
         <Footer />
-      </footer>
+      </div>
     </Router>
   );
 }
-
-export default App;

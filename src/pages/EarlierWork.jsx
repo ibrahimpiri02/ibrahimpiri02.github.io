@@ -1,0 +1,105 @@
+import React from "react";
+import { Page, Section, Entry, Figure } from "../components/ui";
+
+export default function EarlierWork() {
+  return (
+    <Page
+      eyebrow="Earlier Work"
+      title="Before Caltech"
+      intro="Teaching, competing, and a decade of math circle. These are the projects that got me here."
+    >
+      <Section title="Teaching">
+        <Entry
+          title="AIML Initiative"
+          meta="Co-founder & Vice President"
+          logo="/aiml_logo.png"
+          href="https://aiml-initiative.org"
+        >
+          <p>
+            Started as my school's AI and machine learning club and grew into a{" "}
+            <a
+              href="https://drive.google.com/drive/folders/10xwsjAUvP-medQ868O97ZcFDnvFuzs3o?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link"
+            >
+              twelve-week curriculum
+            </a>{" "}
+            aligned with California's CS standards, built around Colab notebooks and hands-on projects on topics
+            like dataset bias. We proposed it to LAUSD as a district-wide AI elective. I also built{" "}
+            <a href="https://aiml-initiative.org" target="_blank" rel="noopener noreferrer" className="link">
+              aiml-initiative.org
+            </a>
+            , where students work through the lessons, quizzes, and labs and teachers track their progress.
+          </p>
+        </Entry>
+
+        <Entry
+          title="UCLA Olga Radko Endowed Math Circle"
+          meta="Student & volunteer instructor"
+          logo="/ormc_logo.png"
+          href="https://circles.math.ucla.edu/circles/circle-about.shtml"
+        >
+          <p>
+            I joined at eight and spent ten years there doing proof-based number theory, combinatorics, geometry,
+            and graph theory, often taught by former IMO medalists. In my last two years I taught the Beginners
+            group, writing problem sets and lessons on how to build an argument. ORMC is also where my UCLA research
+            began.
+          </p>
+        </Entry>
+      </Section>
+
+      <Section title="Competitions">
+        <Entry title="MIT Battlecode" meta="2nd place, US high school · 2025">
+          <p>
+            A real-time strategy AI competition under tight compute limits. Our team built pathing, unit
+            micro-behavior, and economy planning, then traveled to MIT for the finals.
+          </p>
+          <div className="grid grid-cols-3 gap-3 pt-2">
+            <Figure src="/battlecode1.webp" />
+            <Figure src="/battlecode2.webp" />
+            <Figure src="/battlecode3.webp" />
+          </div>
+        </Entry>
+
+        <Entry title="Citadel Terminal" meta="2nd place, North America · 2023 & 2025">
+          <p>
+            Designing game-playing agents under strict performance limits: search, heuristics, and resource
+            allocation. Certificates:{" "}
+            <a
+              href="https://www.credential.net/7b5a2048-f3e2-4421-b7e7-460757d90d81"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link"
+            >
+              2023
+            </a>
+            ,{" "}
+            <a
+              href="https://www.credential.net/fc300b87-2a4f-413c-bc5f-ed95e926e716"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link"
+            >
+              2025
+            </a>
+            .
+          </p>
+        </Entry>
+
+        <Entry title="Science Bowl" meta="A-team captain & club president">
+          <p>
+            Competed from middle school on as a math and physics player, placing 4th in one of the country's most
+            competitive regions. As captain, I worked with faculty and counseling to create a for-credit Science
+            Bowl class so the team could keep training new players after I left.
+          </p>
+          <div className="grid grid-cols-2 gap-3 pt-2 sm:grid-cols-4">
+            {["/scibowl1.png", "/scibowl2.png", "/scibowl3.png", "/scibowl4.png"].map((s) => (
+              <Figure key={s} src={s} />
+            ))}
+          </div>
+        </Entry>
+      </Section>
+    </Page>
+  );
+}
