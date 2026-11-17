@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Physarum from "../components/Physarum";
 import { Stats, Quote } from "../components/ui";
+import { LazyVideo, Reveal } from "../components/motion";
 import { BellyFlop, AttentionMatrix } from "../components/Illustrations";
 import { CONTACT, RESUME_URL } from "../site";
 
 const stats = [
   { value: "1 of 7", label: "global innovations, World Governments Summit 2024" },
   { value: "4+", label: "infrastructure pilots delivered with Mireta" },
-  { value: "2×", label: "2nd in North America, Citadel Terminal" },
+  { value: "2nd, twice", label: "North America, Citadel Terminal (2023 & 2025)" },
   { value: "2nd", label: "MIT Battlecode 2025" },
 ];
 
@@ -22,7 +23,7 @@ function More({ children = "Read more" }) {
 }
 
 const card =
-  "group relative block overflow-hidden rounded-2xl border border-black/5 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/10";
+  "group relative block h-full overflow-hidden rounded-2xl border border-black/5 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/10";
 
 const heroLink =
   "text-white underline decoration-accent-light/60 underline-offset-4 hover:text-white hover:decoration-accent-light";
@@ -57,8 +58,8 @@ export default function Home() {
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-white/80 sm:text-xl">
               I like systems that organize themselves. I co-founded{" "}
-              <Link to="/mireta" className={heroLink}>Mireta</Link>, where we use slime mold to design cities. I
-              study the <Link to="/research" className={heroLink}>mathematics of attention</Link>. And at Caltech,
+              <Link to="/mireta" className={heroLink}>Mireta</Link>, where we use slime mold to design cities. I’ve
+              researched the <Link to="/research" className={heroLink}>mathematics of attention</Link>. And at Caltech,
               I’m helping <Link to="/parsec" className={heroLink}>teach a rocket to belly flop</Link>.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
@@ -69,8 +70,11 @@ export default function Home() {
                 Get in touch
               </a>
             </div>
-            <p className="mt-10 hidden font-mono text-xs text-white/40 md:block">
+            <p className="mt-10 hidden font-mono text-xs text-white/55 md:block">
               ↖ that’s a live slime-mold simulation. Move your cursor and it’ll follow.
+            </p>
+            <p className="mt-8 font-mono text-xs text-white/55 md:hidden">
+              ↑ that’s a live slime-mold simulation. Drag your finger across it.
             </p>
           </div>
           <div className="relative mx-auto hidden md:block">
@@ -97,13 +101,11 @@ export default function Home() {
         <h2 className="mb-10 font-serif text-3xl tracking-tight sm:text-4xl">Three problems I can’t stop thinking about</h2>
 
         <div className="grid gap-6 md:grid-cols-2">
-          <Link to="/mireta" className={`${card} md:col-span-2 md:grid md:grid-cols-2`}>
-            <video
+          <Reveal className="md:col-span-2">
+          <Link to="/mireta" className={`${card} md:grid md:grid-cols-2`}>
+            <LazyVideo
               src="/uae_ani.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
+              label="Mireta's proposed highway network for the UAE"
               className="aspect-video w-full bg-night object-cover md:aspect-auto md:h-full"
             />
             <div className="p-8">
@@ -117,7 +119,9 @@ export default function Home() {
               <More />
             </div>
           </Link>
+          </Reveal>
 
+          <Reveal>
           <Link to="/research" className={card}>
             <div className="flex h-56 items-center justify-center bg-accent-wash text-ink">
               <AttentionMatrix className="h-44" />
@@ -132,7 +136,9 @@ export default function Home() {
               <More />
             </div>
           </Link>
+          </Reveal>
 
+          <Reveal delay={120}>
           <Link to="/parsec" className={card}>
             <div className="flex h-56 items-center justify-center bg-night text-white">
               <BellyFlop className="h-48" />
@@ -147,10 +153,12 @@ export default function Home() {
               <More />
             </div>
           </Link>
+          </Reveal>
 
-          <Link to="/earlier-work" className={`${card} md:col-span-2`}>
+          <Reveal className="md:col-span-2">
+          <Link to="/earlier-work" className={`${card}`}>
             <div className="grid grid-cols-4">
-              {["/scibowl2.png", "/battlecode2.webp", "/scibowl3.png", "/scibowl4.png"].map((s) => (
+              {["/scibowl2.webp", "/battlecode2.webp", "/scibowl3.webp", "/scibowl4.webp"].map((s) => (
                 <img key={s} src={s} alt="" loading="lazy" className="aspect-[4/3] w-full object-cover" />
               ))}
             </div>
@@ -166,12 +174,13 @@ export default function Home() {
               <More>See it all</More>
             </div>
           </Link>
+          </Reveal>
         </div>
       </section>
 
       {/* About */}
       <section className="mx-auto max-w-5xl px-6 pt-28">
-        <div className="grid gap-12 md:grid-cols-2 md:items-start">
+        <Reveal className="grid gap-12 md:grid-cols-2 md:items-start">
           <div>
             <p className="eyebrow mb-3">Off the clock</p>
             <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">A little more about me</h2>
@@ -204,7 +213,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

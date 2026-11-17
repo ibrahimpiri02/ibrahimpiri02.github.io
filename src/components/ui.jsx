@@ -1,5 +1,6 @@
 import React from "react";
 import Physarum from "./Physarum";
+import { LazyVideo, Reveal } from "./motion";
 
 /** Dark header band with the slime-mold network behind it. */
 export function PageHero({ eyebrow, title, intro, seed = 3, children }) {
@@ -25,7 +26,7 @@ export function Body({ children }) {
 /** Section with a numbered mono label in a left rail on wide screens. */
 export function Section({ index, title, id, children }) {
   return (
-    <section id={id} className="scroll-mt-24 md:grid md:grid-cols-[200px_1fr] md:gap-12">
+    <Reveal as="section" id={id} className="scroll-mt-24 md:grid md:grid-cols-[200px_1fr] md:gap-12">
       <div className="mb-6 md:mb-0">
         <div className="md:sticky md:top-24">
           {index && <span className="font-mono text-xs text-accent">{index}</span>}
@@ -33,7 +34,7 @@ export function Section({ index, title, id, children }) {
         </div>
       </div>
       <div className="min-w-0 space-y-5 text-[1.0625rem] leading-relaxed text-ink-soft">{children}</div>
-    </section>
+    </Reveal>
   );
 }
 
@@ -100,7 +101,7 @@ export function Figure({ src, video, caption, aspect = "aspect-video", className
   return (
     <figure className={className}>
       {video ? (
-        <video src={src} autoPlay muted loop playsInline className={cls} />
+        <LazyVideo src={src} label={caption} className={cls} />
       ) : (
         <img src={src} alt={caption || ""} loading="lazy" className={cls} />
       )}

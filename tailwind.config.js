@@ -6,7 +6,7 @@ export default {
       colors: {
         accent: { DEFAULT: "#009a8c", dark: "#007a6f", light: "#5fd8c6", wash: "#e8f6f4" },
         night: { DEFAULT: "#081114", soft: "#0f1d21" },
-        ink: { DEFAULT: "#111418", soft: "#4a5058", faint: "#8a9099" },
+        ink: { DEFAULT: "#111418", soft: "#4a5058", faint: "#646b74" },
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "Helvetica", "Arial", "sans-serif"],

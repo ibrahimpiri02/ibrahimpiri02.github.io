@@ -55,8 +55,8 @@ export default function Mireta() {
             several designs, depending on how connected the planner wants the result to be.
           </p>
           <div className="grid gap-6 sm:grid-cols-2">
-            <Figure src="/forage.png" caption="Foraging: agents explore, guided by noise and attractive forces." />
-            <Figure src="/refine.png" caption="Refining: the biased mesh is pruned into a final network." />
+            <Figure src="/forage.webp" caption="Foraging: agents explore, guided by noise and attractive forces." />
+            <Figure src="/refine.webp" caption="Refining: the biased mesh is pruned into a final network." />
           </div>
         </Section>
 
@@ -72,7 +72,7 @@ export default function Mireta() {
             <Figure src="/wadi_ani.mp4" video caption="Wadi Greenway: a transit corridor routed through a protected wadi landscape for an international design firm." />
           </div>
           <Figure
-            src="/gbc.png"
+            src="/gbc.webp"
             aspect="aspect-[16/9]"
             caption="Deliverables for a past client: suggested refinements that measurably improved transit time and resiliency."
           />
@@ -114,9 +114,9 @@ export default function Mireta() {
             ]}
           />
           <div className="grid gap-6 pt-4 sm:grid-cols-3">
-            <Figure src="/mireta2.jpg" aspect="aspect-[4/3]" caption="Edge of Government exhibition, WGS 2024" />
-            <Figure src="/mireta3.png" aspect="aspect-[4/3]" caption="Presenting at Global Rail Abu Dhabi 2025" />
-            <Figure src="/mireta1.png" aspect="aspect-[4/3]" caption="Pioneer Village masterplan, Canada" />
+            <Figure src="/mireta2.webp" aspect="aspect-[4/3]" caption="Edge of Government exhibition, WGS 2024" />
+            <Figure src="/mireta3.webp" aspect="aspect-[4/3]" caption="Presenting at Global Rail Abu Dhabi 2025" />
+            <Figure src="/mireta1.webp" aspect="aspect-[4/3]" caption="Pioneer Village masterplan, Canada" />
           </div>
           <Callout>
             See our full portfolio at{" "}

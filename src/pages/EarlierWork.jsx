@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { PageHero, Body, Section, Entry, Figure, Bullets, Quote } from "../components/ui";
 
 const terminalCerts = [
-  { year: "2023", image: "/terminal23.jpg", link: "https://www.credential.net/7b5a2048-f3e2-4421-b7e7-460757d90d81" },
-  { year: "2025", image: "/terminal25.jpg", link: "https://www.credential.net/fc300b87-2a4f-413c-bc5f-ed95e926e716" },
+  { year: "2023", image: "/terminal23.webp", link: "https://www.credential.net/7b5a2048-f3e2-4421-b7e7-460757d90d81" },
+  { year: "2025", image: "/terminal25.webp", link: "https://www.credential.net/fc300b87-2a4f-413c-bc5f-ed95e926e716" },
 ];
 
 export default function EarlierWork() {
@@ -22,7 +22,7 @@ export default function EarlierWork() {
           <Entry
             title="Olga Radko Endowed Math Circle"
             meta="Student, then instructor"
-            logo="/ormc_logo.png"
+            logo="/ormc_logo.webp"
             href="https://circles.math.ucla.edu/circles/circle-about.shtml"
           >
             <p>
@@ -50,7 +50,7 @@ export default function EarlierWork() {
           <Entry
             title="Artificial Intelligence & Machine Learning Initiative"
             meta="Co-founder & VP · 2024–26"
-            logo="/aiml_logo.png"
+            logo="/aiml_logo.webp"
           >
             <p>
               We started as a small after-school AI club and grew into an effort to bring AI literacy into
@@ -133,7 +133,7 @@ export default function EarlierWork() {
               buzzer drills, giving new students a ladder in and returning players structured practice time.
             </p>
             <div className="grid grid-cols-2 gap-3 pt-2 sm:grid-cols-4">
-              {["/scibowl1.png", "/scibowl2.png", "/scibowl3.png", "/scibowl4.png"].map((s) => (
+              {["/scibowl1.webp", "/scibowl2.webp", "/scibowl3.webp", "/scibowl4.webp"].map((s) => (
                 <Figure key={s} src={s} aspect="aspect-[4/3]" />
               ))}
             </div>

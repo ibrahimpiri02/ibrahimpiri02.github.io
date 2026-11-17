@@ -21,3 +21,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Build output (the deploy workflow builds the site itself)
+dist

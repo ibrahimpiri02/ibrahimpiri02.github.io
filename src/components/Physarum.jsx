@@ -157,11 +157,16 @@ export default function Physarum({ seed = 7, density = 0.09, scale = 2, classNam
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let raf = 0;
     let visible = true;
-    const loop = () => {
+    // Phones and tablets run at ~30 fps to save battery; the motion still reads as smooth.
+    const frameMs = window.matchMedia("(pointer: coarse)").matches ? 1000 / 30 : 0;
+    let last = 0;
+    const loop = (now) => {
+      raf = requestAnimationFrame(loop);
+      if (frameMs && now - last < frameMs - 1) return;
+      last = now;
       feed();
       step();
       draw();
-      raf = requestAnimationFrame(loop);
     };
     const io = new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
