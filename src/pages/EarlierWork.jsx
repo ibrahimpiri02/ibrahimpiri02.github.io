@@ -1,110 +1,156 @@
 import React from "react";
-import { Page, Section, Entry, Figure } from "../components/ui";
+import { PageHero, Body, Section, Entry, Figure, Bullets, Quote } from "../components/ui";
+
+const ext = { target: "_blank", rel: "noopener noreferrer", className: "link" };
+
+const terminalCerts = [
+  { year: "2023", image: "/terminal23.jpg", link: "https://www.credential.net/7b5a2048-f3e2-4421-b7e7-460757d90d81" },
+  { year: "2025", image: "/terminal25.jpg", link: "https://www.credential.net/fc300b87-2a4f-413c-bc5f-ed95e926e716" },
+];
 
 export default function EarlierWork() {
   return (
-    <Page
-      eyebrow="Earlier Work"
-      title="Before Caltech"
-      intro="Teaching, competing, and a decade of math circle: the work I did through high school at the Los Angeles Center for Enriched Studies (2022–26)."
-    >
-      <Section title="Teaching">
-        <Entry
-          title="AIML Initiative"
-          meta="Co-founder & VP · 2024–26"
-          logo="/aiml_logo.png"
-          href="https://aiml-initiative.org"
-        >
-          <p>
-            Started as my school's AI and machine learning club and grew into a{" "}
-            <a
-              href="https://drive.google.com/drive/folders/10xwsjAUvP-medQ868O97ZcFDnvFuzs3o?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link"
-            >
-              twelve-week curriculum
-            </a>{" "}
-            aligned with California's CS standards, which I taught weekly to 30+ students using Colab notebooks and
-            hands-on projects on topics like dataset bias. We worked with LAUSD to turn it into a district-wide AI
-            elective. I also built{" "}
-            <a href="https://aiml-initiative.org" target="_blank" rel="noopener noreferrer" className="link">
-              aiml-initiative.org
-            </a>
-            , where students work through the lessons, quizzes, and labs and teachers track their progress.
-          </p>
-        </Entry>
+    <>
+      <PageHero
+        seed={8}
+        eyebrow="Earlier Work"
+        title="Before Caltech"
+        intro="Teaching, competing, and ten years of math circle. This is the work I did growing up in Los Angeles and at the Los Angeles Center for Enriched Studies, and it’s where most of my habits come from."
+      />
 
-        <Entry
-          title="UCLA Olga Radko Endowed Math Circle"
-          meta="Student, then instructor · 2025–26"
-          logo="/ormc_logo.png"
-          href="https://circles.math.ucla.edu/circles/circle-about.shtml"
-        >
-          <p>
-            I joined at eight and spent ten years there doing proof-based number theory, combinatorics, geometry,
-            and graph theory, often taught by former IMO medalists. In my last two years I taught the Beginners
-            group, writing problem sets and lessons on how to build an argument. ORMC is also where my UCLA research
-            began.
-          </p>
-        </Entry>
-      </Section>
+      <Body>
+        <Section index="01" title="AIML Initiative">
+          <Entry
+            title="Artificial Intelligence & Machine Learning Initiative"
+            meta="Co-founder & VP · 2024–26"
+            logo="/aiml_logo.png"
+          >
+            <p>
+              We started as a small after-school AI club and grew into an effort to bring AI literacy into
+              classrooms across Los Angeles. My co-founders and I wrote a{" "}
+              <a href="https://drive.google.com/drive/folders/10xwsjAUvP-medQ868O97ZcFDnvFuzs3o?usp=sharing" {...ext}>
+                twelve-week curriculum
+              </a>{" "}
+              aligned with California’s Computer Science standards: Colab notebooks, visual explanations of core
+              algorithms, and projects that make ideas like fairness and dataset bias concrete.
+            </p>
+            <Bullets
+              items={[
+                "Taught the curriculum live every week to 30+ students",
+                "Presented to LAUSD educators and curriculum specialists, and worked with the district to turn it into a district-wide AI elective",
+                <>
+                  Built{" "}
+                  <a href="https://aiml-initiative.org" {...ext}>
+                    aiml-initiative.org
+                  </a>
+                  , where students work through interactive guides, quizzes, and lab notebooks, and teachers track
+                  progress and manage assignments
+                </>,
+              ]}
+            />
+            <p>
+              It’s one of the things I’m proudest of, because it turned something I love into something that helps
+              other people think critically about technology.
+            </p>
+          </Entry>
+        </Section>
 
-      <Section title="Competitions">
-        <Entry title="MIT Battlecode" meta="2nd place, US high school · 2025">
-          <p>
-            A real-time strategy AI competition under tight compute limits. Our team built pathing, unit
-            micro-behavior, and economy planning, then traveled to MIT for the finals.
-          </p>
-          <div className="grid grid-cols-3 gap-3 pt-2">
-            <Figure src="/battlecode1.webp" />
-            <Figure src="/battlecode2.webp" />
-            <Figure src="/battlecode3.webp" />
-          </div>
-        </Entry>
+        <Section index="02" title="Competitions">
+          <Entry title="MIT Battlecode" meta="2nd place · 2025">
+            <p>
+              A real-time strategy AI competition where you win on both micro control and macro planning under
+              tight compute budgets. We built the full stack, from simulation-aware heuristics to match analysis,
+              and were flown out to MIT for the finals.
+            </p>
+            <Bullets
+              items={[
+                "Strategy: economy planning, map control, and opponent modeling",
+                "Micro: pathing, collision handling, and adaptive unit behavior",
+                "Optimization: caching, pruning, and constant-time data structures",
+              ]}
+            />
+            <div className="grid grid-cols-3 gap-3 pt-2">
+              <Figure src="/battlecode1.webp" aspect="aspect-[4/3]" />
+              <Figure src="/battlecode2.webp" aspect="aspect-[4/3]" />
+              <Figure src="/battlecode3.webp" aspect="aspect-[4/3]" />
+            </div>
+          </Entry>
 
-        <Entry title="Citadel Terminal" meta="2nd place, North America · 2023 & 2025">
-          <p>
-            Designing game-playing agents under strict performance limits: search, heuristics, and resource
-            allocation. Certificates:{" "}
-            <a
-              href="https://www.credential.net/7b5a2048-f3e2-4421-b7e7-460757d90d81"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link"
-            >
-              2023
-            </a>
-            ,{" "}
-            <a
-              href="https://www.credential.net/fc300b87-2a4f-413c-bc5f-ed95e926e716"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link"
-            >
-              2025
-            </a>
-            .
-          </p>
-        </Entry>
+          <Entry title="Citadel Terminal" meta="2nd in North America · 2023 & 2025">
+            <p>
+              Designing real-time game agents under strict performance limits, across algorithm design, systems
+              engineering, and evaluation.
+            </p>
+            <Bullets
+              items={[
+                "Algorithms: search, heuristics, state estimation, and resource allocation",
+                "Engineering: profiling, latency control, and automated match evaluation",
+              ]}
+            />
+            <div className="grid grid-cols-2 gap-4 pt-2">
+              {terminalCerts.map((c) => (
+                <a key={c.year} href={c.link} target="_blank" rel="noopener noreferrer" className="group block">
+                  <img
+                    src={c.image}
+                    alt={`Citadel Terminal ${c.year} certificate`}
+                    loading="lazy"
+                    className="w-full rounded-lg border border-black/5 transition-transform group-hover:scale-[1.02]"
+                  />
+                  <span className="mt-2 block font-mono text-xs text-ink-faint group-hover:text-accent">
+                    {c.year} certificate ↗
+                  </span>
+                </a>
+              ))}
+            </div>
+          </Entry>
 
-        <Entry title="MESA SoCal Regionals" meta="1st place ×2 · 2025">
-          <p>First place in both Coding Solutions and Math Escape.</p>
-        </Entry>
+          <Entry title="Science Bowl" meta="A-team captain · 4th, LADWP Regional 2024">
+            <p>
+              I joined in middle school and grew into leadership through consistency and preparation: B-team
+              captain for math in ninth grade, A team for math and physics in tenth, then A-team captain and club
+              president in eleventh. We placed 4th in one of the most competitive regions in the country.
+            </p>
+            <p>
+              Our roster was young, so I focused on building something that would last. Working with faculty and
+              counseling, I set up a for-credit Science Bowl class with a skills-based syllabus, scrimmages, and
+              buzzer drills, giving new students a ladder in and returning players structured practice time.
+            </p>
+            <div className="grid grid-cols-2 gap-3 pt-2 sm:grid-cols-4">
+              {["/scibowl1.png", "/scibowl2.png", "/scibowl3.png", "/scibowl4.png"].map((s) => (
+                <Figure key={s} src={s} aspect="aspect-[4/3]" />
+              ))}
+            </div>
+          </Entry>
 
-        <Entry title="Science Bowl" meta="4th, LADWP Regional · 2024">
-          <p>
-            Competed from middle school on as a math and physics player, then captained the A team and led the club.
-            We placed 4th in one of the country's most competitive regions. As captain, I worked with faculty and counseling to create a for-credit Science
-            Bowl class so the team could keep training new players after I left.
-          </p>
-          <div className="grid grid-cols-2 gap-3 pt-2 sm:grid-cols-4">
-            {["/scibowl1.png", "/scibowl2.png", "/scibowl3.png", "/scibowl4.png"].map((s) => (
-              <Figure key={s} src={s} />
-            ))}
-          </div>
-        </Entry>
-      </Section>
-    </Page>
+          <Entry title="MESA SoCal Regionals" meta="1st place ×2 · 2025">
+            <p>First place in both Coding Solutions and Math Escape.</p>
+          </Entry>
+        </Section>
+
+        <Section index="03" title="UCLA Math Circle">
+          <Entry
+            title="Olga Radko Endowed Math Circle"
+            meta="Student, then instructor"
+            logo="/ormc_logo.png"
+            href="https://circles.math.ucla.edu/circles/circle-about.shtml"
+          >
+            <p>
+              I passed the entrance exam at eight, and ORMC became the foundation of my math education. Over a
+              decade I worked through number theory, combinatorics, functional equations, geometry, and graph
+              theory, often taught by former International Math Olympiad gold medalists. Each session worked like
+              small-scale research: make a conjecture, refine the proof, compare approaches.
+            </p>
+            <p>
+              For my last year I taught the Beginners group, writing problem sets and lessons that walked
+              elementary schoolers toward their first structured proofs. ORMC is also where my UCLA research began.
+            </p>
+          </Entry>
+          <Quote cite="On what ORMC gave me">
+            Mathematics became less a subject and more a way of seeing problems: through structure, clarity of
+            reasoning, and the search for elegant solutions.
+          </Quote>
+        </Section>
+      </Body>
+    </>
   );
 }

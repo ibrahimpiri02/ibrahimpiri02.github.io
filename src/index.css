@@ -22,6 +22,15 @@
   }
   /* Small uppercase label */
   .eyebrow {
-    @apply text-xs font-medium uppercase tracking-[0.14em] text-accent;
+    @apply font-mono text-xs uppercase tracking-[0.12em] text-accent;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-accent-dark hover:shadow-lg hover:shadow-accent/20;
+  }
+  .btn-ghost {
+    @apply btn border border-white/20 text-white/90 hover:border-accent-light hover:text-white;
   }
 }

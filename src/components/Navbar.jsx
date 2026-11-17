@@ -4,9 +4,9 @@ import { RESUME_URL } from "../site";
 
 
 const links = [
-  { to: "/parsec", label: "PARSEC" },
-  { to: "/research", label: "Research" },
   { to: "/mireta", label: "Mireta" },
+  { to: "/research", label: "Research" },
+  { to: "/parsec", label: "PARSEC" },
   { to: "/earlier-work", label: "Earlier Work" },
 ];
 
@@ -35,7 +35,7 @@ export function Navbar() {
 
   return (
     <nav className="border-b border-black/5 bg-white/85 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-3xl items-center justify-between px-6">
+      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         <Link to="/" aria-label="Home" className="shrink-0">
           <img src="/ibrahimlogo.png" alt="Ibrahim Piri" className="h-10 w-auto" />
         </Link>
