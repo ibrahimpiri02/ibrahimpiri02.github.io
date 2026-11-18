@@ -52,7 +52,41 @@ function staticPages() {
   };
 }
 
+/**
+ * Security policy for the production build. GitHub Pages can't send response
+ * headers, so these go in as <meta> tags. Only the site's own scripts may run;
+ * styles and fonts may also come from Google Fonts. Not applied to the dev
+ * server, which relies on inline scripts for hot reloading.
+ */
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self'",
+  "worker-src 'self'",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "font-src 'self' data: https://fonts.gstatic.com",
+  "img-src 'self' data: blob:",
+  "media-src 'self'",
+  "connect-src 'self'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'none'",
+  "upgrade-insecure-requests",
+].join("; ");
+
+function securityMeta() {
+  return {
+    name: "security-meta",
+    apply: "build",
+    transformIndexHtml() {
+      return [
+        { tag: "meta", attrs: { "http-equiv": "Content-Security-Policy", content: CSP }, injectTo: "head-prepend" },
+        { tag: "meta", attrs: { name: "referrer", content: "strict-origin-when-cross-origin" }, injectTo: "head-prepend" },
+      ];
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [react(), staticPages()],
+  plugins: [react(), securityMeta(), staticPages()],
   base: "/",
 });

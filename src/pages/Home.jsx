@@ -186,7 +186,7 @@ export default function Home() {
             <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">A little more about me</h2>
             <div className="mt-6 space-y-4 text-[1.0625rem] leading-relaxed text-ink-soft">
               <p>
-                I speak Azeri fluently and Russian conversationally.
+                I speak Azeri and Russian conversationally.
               </p>
               <p>
                 I’ve been waking up early for rocket launch livestreams for more than ten years. Now I get to work

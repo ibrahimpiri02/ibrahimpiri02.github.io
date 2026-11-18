@@ -13,7 +13,6 @@ pdfjs.GlobalWorkerOptions.workerSrc = workerUrl;
  */
 async function renderPdf(doc, container, isCancelled) {
   const width = container.clientWidth;
-  const dpr = Math.min(window.devicePixelRatio || 1, 3);
   const pages = [];
 
   for (let n = 1; n <= doc.numPages; n++) {
@@ -25,6 +24,12 @@ async function renderPdf(doc, container, isCancelled) {
     sheet.style.width = `${viewport.width}px`;
     sheet.style.height = `${viewport.height}px`;
 
+    // Render well above screen resolution so text stays crisp when pinch-zoomed,
+    // but keep each canvas under ~12 MP so phones don't run out of canvas memory.
+    const want = viewport.width * (window.devicePixelRatio || 1) * 2.5;
+    const maxByArea = Math.sqrt(12e6 * (viewport.width / viewport.height));
+    const pixelWidth = Math.max(1600, Math.min(want, 3200, maxByArea));
+    const dpr = pixelWidth / viewport.width;
     const canvas = document.createElement("canvas");
     canvas.width = Math.floor(viewport.width * dpr);
     canvas.height = Math.floor(viewport.height * dpr);
@@ -85,7 +90,8 @@ export default function Resume() {
         .catch(() => !cancelled && setStatus("error"));
     };
 
-    const task = pdfjs.getDocument(RESUME_PDF);
+    // isEvalSupported: false keeps pdf.js from compiling code at runtime (safer, CSP-friendly).
+    const task = pdfjs.getDocument({ url: RESUME_PDF, isEvalSupported: false });
     task.promise
       .then((d) => {
         if (cancelled) return;
