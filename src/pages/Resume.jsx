@@ -24,11 +24,11 @@ async function renderPdf(doc, container, isCancelled) {
     sheet.style.width = `${viewport.width}px`;
     sheet.style.height = `${viewport.height}px`;
 
-    // Render well above screen resolution so text stays crisp when pinch-zoomed,
+    // Render somewhat above screen resolution so text holds up when pinch-zoomed,
     // but keep each canvas under ~12 MP so phones don't run out of canvas memory.
-    const want = viewport.width * (window.devicePixelRatio || 1) * 2.5;
+    const want = viewport.width * (window.devicePixelRatio || 1) * 1.5;
     const maxByArea = Math.sqrt(12e6 * (viewport.width / viewport.height));
-    const pixelWidth = Math.max(1600, Math.min(want, 3200, maxByArea));
+    const pixelWidth = Math.max(1200, Math.min(want, 2400, maxByArea));
     const dpr = pixelWidth / viewport.width;
     const canvas = document.createElement("canvas");
     canvas.width = Math.floor(viewport.width * dpr);
