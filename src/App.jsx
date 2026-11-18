@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
@@ -11,6 +11,9 @@ import Research from "./pages/Research";
 import Mireta from "./pages/Mireta";
 import EarlierWork from "./pages/EarlierWork";
 import NotFound from "./pages/NotFound";
+
+// Loaded on demand so pdf.js stays out of the main bundle.
+const Resume = lazy(() => import("./pages/Resume"));
 
 function DocumentTitle() {
   const { pathname } = useLocation();
@@ -37,6 +40,14 @@ export default function App() {
             <Route path="/research" element={<Research />} />
             <Route path="/parsec" element={<Parsec />} />
             <Route path="/earlier-work" element={<EarlierWork />} />
+            <Route
+              path="/resume"
+              element={
+                <Suspense fallback={null}>
+                  <Resume />
+                </Suspense>
+              }
+            />
             {/* Old routes from the previous site */}
             <Route path="/home" element={<Navigate to="/" replace />} />
             <Route path="/aiml" element={<Navigate to="/research" replace />} />

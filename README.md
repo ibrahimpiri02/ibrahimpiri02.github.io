@@ -24,6 +24,10 @@ The build writes a separate HTML file for each page (`mireta.html`, and so on),
 each with its own title and link-preview tags, plus a `404.html` for everything else. That
 gives the site clean URLs on GitHub Pages without hash routing.
 
+## Updating the resume
+
+Replace `public/resume.pdf` and push. The `/resume` page picks it up automatically.
+
 ## Layout
 
 | Path | What's there |
@@ -33,6 +37,7 @@ gives the site clean URLs on GitHub Pages without hash routing.
 | `src/components/Physarum.jsx` | The slime-mold simulation |
 | `src/components/ui.jsx` | Shared layout pieces (page header, sections, stats, figures) |
 | `src/components/motion.jsx` | Lazy-loading videos and scroll reveals |
+| `src/pages/Resume.jsx` | `/resume`: draws `resume.pdf` with pdf.js so it opens in the page on every device |
 | `public/` | Images, videos, `resume.pdf`, and the link-preview image |
 
 The previous version of the site is preserved on the `archive/2025-site` branch.

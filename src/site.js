@@ -1,4 +1,6 @@
-export const RESUME_URL = `${import.meta.env.BASE_URL}resume.pdf`;
+// The /resume page draws the PDF in the browser; RESUME_PDF is the file itself.
+export const RESUME_URL = "/resume";
+export const RESUME_PDF = "/resume.pdf";
 
 export const CONTACT = [
   { label: "Email", href: "mailto:ibrahimpiri02@gmail.com" },

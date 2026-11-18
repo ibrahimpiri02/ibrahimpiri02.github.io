@@ -35,6 +35,12 @@ export const PAGES = [
   },
 ];
 
+PAGES.push({
+  path: "/resume",
+  title: "Resume · Ibrahim Piri",
+  description: "Ibrahim Piri's resume.",
+});
+
 export const NOT_FOUND = {
   title: "Page not found · Ibrahim Piri",
   description: "This page doesn't exist.",
